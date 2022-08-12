@@ -1,5 +1,8 @@
 import './style.css'
 
-export const BotaoFixo=()=>{
-    return <button className='botao-fixo'> + </button>
+type Props={
+    activateOnModal:()=>void
+}
+export const BotaoFixo=({activateOnModal}:Props)=>{
+    return <button onClick={activateOnModal} className='botao-fixo'> + </button>
 }

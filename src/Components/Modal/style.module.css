@@ -8,8 +8,17 @@
     width: 600px;
     background-color:#03324a;
     border-radius: 10px;
+    position: fixed;
+    top: 100px;
 }
 
+
+@media screen and (max-width:900px) {
+    .modalContainer{
+        width: 90vw;
+        top:30%;
+    }
+}
 .dataTitle{
     display: flex;
 }

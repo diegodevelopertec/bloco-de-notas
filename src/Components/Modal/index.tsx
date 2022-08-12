@@ -1,10 +1,21 @@
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent, useEffect, useState } from 'react'
 import S from './style.module.css'
+import {Notes} from '../../data/notes'
+
+type Props={
+    activateOffModal:()=>void;
+
+}
 
 
-export const Modal=()=>{
+export const Modal=({activateOffModal}:Props)=>{
+const d=new Date()
 const [title,setTitle]=useState('')
 const [content,setNoteContent]=useState('')
+
+
+
+
 
 
 const formActions={
@@ -17,9 +28,24 @@ const formActions={
 }
 
 
-console.log(title)
-console.log(content);
+const addNewNote=()=>{
+    if(title && content){
+        let newItem={
+            id:Notes.length+1,
+            title,
+            content,
+            data:d.toLocaleDateString()
+        }
+        Notes.unshift(newItem)
+        console.log(Notes);
+        activateOffModal()
+        
+    }else{
+        alert('Todos os campos devem estar preenchidos')
+    }
 
+
+}
 
 return <>
         <div className={S.modalContainer}>
@@ -34,10 +60,9 @@ return <>
                 </div>
             </div>
             <div className={S.modalButtons}>
-                    <button className={S.BtnCancel}>cancelar</button>
-                    <button className={S.BtnAdd}>cancelar</button>
-            </div>
-            
+                    <button onClick={activateOffModal} className={S.BtnCancel}>cancelar</button>
+                    <button onClick={addNewNote} className={S.BtnAdd}>cancelar</button>
+            </div> 
         </div>
 
 
