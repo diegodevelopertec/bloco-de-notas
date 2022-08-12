@@ -1,0 +1,26 @@
+
+
+.botao-fixo{
+    border-radius: 100%;
+    color: white;
+    border: none;
+    height: 50px;
+    width:50px;
+    background-color:#03324a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left:86%;
+}
+
+@media screen and (max-width:912px){
+    .botao-fixo{
+        top: 80%;
+        min-width: 40px;
+        min-height: 40px;
+        height: 50px;
+        width:50px;
+    }
+}
