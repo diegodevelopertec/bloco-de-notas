@@ -11,6 +11,14 @@ flex-direction:column;
 
 
 `
+
+export const Header=styled.header`
+background-color:#03324a;
+height:50px;
+color:white;
+padding:10px;
+`
+
 export const ContainerContent=styled.div`
 display:flex;
 justify-content:center;
@@ -28,8 +36,22 @@ width:80vw;
 }
 `
 
-export const Header=styled.header`
-background-color:#03324a;
-height50px;
+
+export const ContainerModal=styled.div`
+padding-top:2%;
+padding-bottom:2%;
+display:flex;
+justify-content:center;
+align-items:Center;
+margin-top:10%;
+
+
+
+
+
+
+@media screen and (max-width:600px){
 padding:10px;
+}
 `
+

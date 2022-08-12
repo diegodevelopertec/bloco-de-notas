@@ -6,13 +6,18 @@
     border: none;
     height: 50px;
     width:50px;
-    background-color:#03324a;
+    background-color:#06415e;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 50%;
     left:86%;
+}
+
+.botao-fixo:hover{
+    cursor:pointer;
+    background-color: #03324a;
 }
 
 @media screen and (max-width:912px){
