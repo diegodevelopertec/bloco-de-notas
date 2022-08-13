@@ -9,28 +9,32 @@ padding:10px;
 display:flex;
 flex-direction:column;
 margin:5px;
-
+border-radius:5px;
+color:#4bb3b1;
 `
 export const cardData=styled.div`
 display:flex;
 justify-content:space-between;
 align-items:center;
 height:10px;
-padding:10px;
+margin-bottom:5px;
 font-size:10px;
+
 span{
-    text-align:center
+    text-align:center;
 }
 `
 
 export const cardContent=styled.div`
 flex:1;
 margin-top:10px;
+
 textarea{
  width:100%;
  height:100%;
  resize:none;
  padding:10px;
+overflow:none;
 
 }
 

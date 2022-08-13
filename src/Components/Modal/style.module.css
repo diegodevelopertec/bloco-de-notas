@@ -16,7 +16,7 @@
 @media screen and (max-width:900px) {
     .modalContainer{
         width: 90vw;
-        top:30%;
+        
     }
 }
 .dataTitle{
@@ -65,6 +65,7 @@
     border-radius: 8px;
     border: none;
     color: white;
+    font-weight: bold;
 }
 .modalButtons .BtnCancel{
     background-color:#cf3037;

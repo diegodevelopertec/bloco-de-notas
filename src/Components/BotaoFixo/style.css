@@ -12,7 +12,8 @@
     align-items: center;
     position: fixed;
     top: 50%;
-    left:86%;
+    left:94%;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .botao-fixo:hover{
@@ -20,12 +21,16 @@
     background-color: #03324a;
 }
 
-@media screen and (max-width:912px){
+@media screen and (max-width:780px){
     .botao-fixo{
         top: 80%;
         min-width: 40px;
         min-height: 40px;
         height: 50px;
         width:50px;
+        left: 84vw;
+        box-shadow: 0 10 10px #eee;
+        border-bottom: 10px;
+        border: #03324a;
     }
 }

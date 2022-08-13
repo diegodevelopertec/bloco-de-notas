@@ -13,16 +13,21 @@ flex-direction:column;
 
 export const Header=styled.header`
 background-color:#03324a;
-height:50px;
-color:white;
-padding:10px;
+color:#4bb3b1;
+padding:15px;
+font-size:22px;
+display:flex;
+align-items:center;
+position:fixed;
+width:100%;
+margin-bottom:5%;
 `
 
 export const ContainerContent=styled.div`
 display:flex;
 justify-content:center;
 width:100%;
-
+margin-top:10px;
 
 `
 
@@ -41,23 +46,26 @@ justify-content:center;
 
 
 export const ContainerModal=styled.div`
-padding-top:2%;
+padding-top:5%;
 padding-bottom:2%;
 display:flex;
 justify-content:center;
 align-items:Center;
-margin-top:10%;
+margin-top:18%;
 @media screen and (max-width:600px){
 padding:10px;
 
 }
 `
-
+type Props={
+opacity:string;
+}
 export const ListContainer=styled.div`
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
-margin-top:80px;
+margin-top:100px;
+
 
 @media screen and (max-width:700px){
     margin-top:20px;

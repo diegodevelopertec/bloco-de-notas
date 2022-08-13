@@ -23,14 +23,14 @@ return <>
     <S.Header>WordBlock</S.Header>
       <S.ContainerContent>
       <S.Main>
-        <S.ListContainer>
+        <S.ListContainer >
        
-          { Notes ? (Notes.map((item,index)=>(
+        { Notes.map((item,index)=>(
             <div>
                 <Card key={index} title={item.title} content={item.content} data={item.data} />
-            </div>))) : <div>{'Nenhuma anoatação'}</div>
-            
-          }  
+            </div>)) 
+            }
+        
        
         
         </S.ListContainer>

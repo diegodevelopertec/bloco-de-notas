@@ -61,7 +61,7 @@ return <>
             </div>
             <div className={S.modalButtons}>
                     <button onClick={activateOffModal} className={S.BtnCancel}>cancelar</button>
-                    <button onClick={addNewNote} className={S.BtnAdd}>cancelar</button>
+                    <button onClick={addNewNote} className={S.BtnAdd}>salvar</button>
             </div> 
         </div>
 
