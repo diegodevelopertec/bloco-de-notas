@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import * as S from './App.styled'
 import { BotaoFixo } from './Components/BotaoFixo'
 import { Modal } from './Components/Modal'
@@ -6,8 +6,12 @@ import { Card } from './Components/Card'
 import { Notes } from './data/notes'
 
 const App=()=>{
-
+  let [list,setListofNotes]=useState(Notes)
   let [onModal,setOnModal]=useState(false)
+
+
+
+  
 const actionsModal={
     openModal:()=>{
       setOnModal(true)
@@ -25,7 +29,7 @@ return <>
       <S.Main>
         <S.ListContainer >
        
-        { Notes.map((item,index)=>(
+        {list.map((item,index)=>(
             <div>
                 <Card key={index} title={item.title} content={item.content} data={item.data} />
             </div>)) 

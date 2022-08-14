@@ -15,7 +15,7 @@ export const Card=({title,content,data}:Props)=>{
             <span><h3>{data}</h3></span>
         </S.cardData>
         <S.cardContent>
-            <textarea disabled name="" id="" >{content}</textarea>
+            <textarea disabled name="" id="" value={content}></textarea>
         </S.cardContent>
     </S.cardContainer>
  

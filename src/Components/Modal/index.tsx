@@ -2,6 +2,9 @@ import { ChangeEvent, useEffect, useState } from 'react'
 import S from './style.module.css'
 import {Notes} from '../../data/notes'
 
+
+
+//types
 type Props={
     activateOffModal:()=>void;
 
@@ -9,15 +12,17 @@ type Props={
 
 
 export const Modal=({activateOffModal}:Props)=>{
+
+//variables
 const d=new Date()
 const [title,setTitle]=useState('')
 const [content,setNoteContent]=useState('')
+const [error,setError]=useState(false)
 
 
 
 
-
-
+//functions
 const formActions={
     titleContent:(e:ChangeEvent<HTMLInputElement>)=>{
         setTitle(e.target.value)
@@ -30,18 +35,19 @@ const formActions={
 
 const addNewNote=()=>{
     if(title && content){
-        let newItem={
-            id:Notes.length+1,
-            title,
-            content,
+  
+        let item={
+            id:Notes.length + 1,
+            content,title,
             data:d.toLocaleDateString()
         }
-        Notes.unshift(newItem)
+
+        Notes.unshift(item)
         console.log(Notes);
         activateOffModal()
         
     }else{
-        alert('Todos os campos devem estar preenchidos')
+      alert('Todos os campos devem ser Preenchidos')
     }
 
 
@@ -51,8 +57,8 @@ return <>
         <div className={S.modalContainer}>
             <div className={S.modalData}>
                 <div className={S.dataTitle}>
-                    <span>Title</span>
-                    <input type="text" value={title} onChange={formActions.titleContent}  />
+                    <div className={S.title}>Title</div>
+                  <div className={S.cxInput}>  <input type="text" value={title} onChange={formActions.titleContent}  /></div>
                 </div>
                 <div className={S.dataContent}>
                     <span>Anotação</span>

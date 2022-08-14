@@ -5,8 +5,7 @@ import styled from 'styled-components'
 export const Container=styled.div`
 display:flex;
 flex-direction:column;
-
-
+background-color:#beccc9;
 
 
 `
@@ -26,7 +25,6 @@ margin-bottom:5%;
 export const ContainerContent=styled.div`
 display:flex;
 justify-content:center;
-width:100%;
 margin-top:10px;
 
 `
@@ -35,6 +33,7 @@ export const Main=styled.main`
 display:flex;
 flex-wrap:wrap ;
 justify-content:center;
+
 
 
 @media screen and (max-width:920px){
@@ -65,6 +64,7 @@ display:flex;
 justify-content:center;
 flex-wrap:wrap;
 margin-top:100px;
+
 
 
 @media screen and (max-width:700px){
