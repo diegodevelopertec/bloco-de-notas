@@ -9,7 +9,7 @@ type Props ={
 }
 export const Card=({title,content,data}:Props)=>{
     return <>
-    <S.cardContainer>
+    <S.cardContainer className="cardItem">
         <S.cardData>
             <span><h3>{title}</h3></span>
             <span><h3>{data}</h3></span>

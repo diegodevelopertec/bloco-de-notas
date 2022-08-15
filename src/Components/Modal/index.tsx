@@ -57,8 +57,8 @@ return <>
         <div className={S.modalContainer}>
             <div className={S.modalData}>
                 <div className={S.dataTitle}>
-                    <div className={S.title}>Title</div>
-                  <div className={S.cxInput}>  <input type="text" value={title} onChange={formActions.titleContent}  /></div>
+                    <div className={S.title}>Titulo</div>
+                  <div className={S.cxInput}>  <input  type="text" value={title} onChange={formActions.titleContent}  /></div>
                 </div>
                 <div className={S.dataContent}>
                     <span>Anotação</span>
