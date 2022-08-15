@@ -26,24 +26,18 @@ return <>
   <S.Container>
     <S.Header>WordBlock</S.Header>
       <S.ContainerContent>
-      <S.Main>
-        <S.ListContainer >
-       
-        {list.map((item,index)=>(
-            <div>
-                <Card key={index} title={item.title} content={item.content} data={item.data} />
-            </div>)) 
-            }
-        
-       
-        
-        </S.ListContainer>
-        
-    
-      
-          <BotaoFixo activateOnModal={actionsModal.openModal}/>
+        <S.Main>
+          <S.ListContainer >
           
-      </S.Main>
+            {list.map((item,index)=>(
+                <div>
+                    <Card key={index} title={item.title} content={item.content} data={item.data} />
+                </div>)) 
+                }
+          </S.ListContainer>
+          <BotaoFixo activateOnModal={actionsModal.openModal}/>
+            
+        </S.Main>
       </S.ContainerContent>
       <S.ContainerModal>
         {  onModal && <Modal activateOffModal={actionsModal.closeModal} />}
