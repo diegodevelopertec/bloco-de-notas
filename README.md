@@ -1,4 +1,4 @@
-<h2>Bloco de Notas>
+<h2>Bloco de Notas
     <img height='50px' width='50px' src="https://img.icons8.com/office/80/000000/react.png"/>
     <img height='60px' width='60px' src="https://img.icons8.com/fluency/96/000000/typescript.png"/>
 </h2>
