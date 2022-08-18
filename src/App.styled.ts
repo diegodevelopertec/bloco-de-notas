@@ -5,7 +5,9 @@ import styled from 'styled-components'
 export const Container=styled.div`
 display:flex;
 flex-direction:column;
-width:100%;
+width:100vw;
+overflow-x:hidden;
+background:#e0e0e0;
 `
 
 export const Header=styled.header`
@@ -21,7 +23,10 @@ width:100vw;
 export const ContainerContent=styled.div`
 display:flex;
 justify-content:center;
-margin-top:10px;
+
+@media screen and (max-width:600px){
+    align-items:center;
+}
 
 `
 
@@ -29,11 +34,12 @@ export const Main=styled.main`
 display:flex;
 flex-wrap:wrap ;
 justify-content:center;
-
+overflow-y:auto;
 
 
 @media screen and (max-width:920px){
     width:100vw;
+   
 }
 `
 
@@ -54,9 +60,7 @@ padding:10px;
 
 }
 `
-type Props={
-opacity:string;
-}
+
 export const ListContainer=styled.div`
 display:flex;
 justify-content:center;
@@ -68,6 +72,7 @@ margin-top:100px;
 
 @media screen and (max-width:700px){
     margin-top:20px;
+    align-items:center;
 }
 
 
@@ -78,7 +83,7 @@ export const ErrorMensage=styled.div`
 display:flex;
 text-align:center;
 margin-top:150px;
-width:100vw;
+
 justify-content:center;
 
 h3{

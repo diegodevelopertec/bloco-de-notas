@@ -9,15 +9,15 @@
     background-color:#03324a;
     border-radius: 10px;
     position: fixed;
-    top: 100px;
-    box-shadow: 0px 0px 10px rgb(102, 101, 101);
+    top: 180px;
+    box-shadow: 0px 0px 20px rgb(73, 70, 85);
 }
 
 
 @media screen and (max-width:900px) {
     .modalContainer{
         width: 90vw;
-        
+      
     }
 }
 .dataTitle{

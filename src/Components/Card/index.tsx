@@ -3,11 +3,12 @@ import * as S from './style'
 
 
 type Props ={
+    id:number,
     title:string,
     content:string,
     data:string
 }
-export const Card=({title,content,data}:Props)=>{
+export const Card=({id,title,content,data}:Props)=>{
     return <>
     <S.cardContainer className="cardItem">
         <S.cardData>
