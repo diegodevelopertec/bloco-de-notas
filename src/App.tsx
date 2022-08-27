@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react'
+import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import * as S from './App.styled'
-import { BotaoFixo } from './Components/BotaoFixo'
-import { Modal } from './Components/Modal'
-import { Card } from './Components/Card'
 import { Notes } from './data/notes'
+import { AllNotes } from './Pages/AllNotes/AllNotes'
+import { LoginPage } from './Pages/Login/login'
+import { Register } from './Pages/Register'
 
 
-const App=()=>{
-  const [list,setListOfNotes]=useState(Notes)
-  const [onModal,setOnModal]=useState(false)
-  const [opacity,setOpacity]=useState(false)
+const App=()=>{ 
+ 
+  
   const [cardModal,setCardModal]=useState(false)
   const  logo=<img height={40} src="https://img.icons8.com/external-icongeek26-flat-icongeek26/64/000000/external-notes-physics-icongeek26-flat-icongeek26.png"/>
-  const iconError=<img src="https://img.icons8.com/fluency/96/000000/error.png"/>
+ 
 
 
 useEffect(()=>{
@@ -30,56 +30,24 @@ useEffect(()=>{
   })
  },[])
 
-useEffect(()=>{
-      let container=document.getElementById('list-container') as HTMLDivElement
-          if(opacity){    
-            container.style.opacity='0.5'
-          }else{
-                container.style.opacity='1'
-          }
-  },[opacity])
 
-const actionsModal={
-    openModal:()=>{
-          setOnModal(true)
-          setOpacity(true)
-        },
-    closeModal:()=>{
-          setOnModal(()=>false)
-          setOpacity(()=>false)
-        
-        }
- }
-   
+
 
 return <>
+  <Router>
   <S.Container>
     <S.Header>WordBlock {logo}</S.Header>
       <S.ContainerContent>
-        <S.Main id='list-container'>
-          <S.ListContainer>
-            { list.length !== 0 ?  list.map((item,index)=>(
-                  <div key={index} >
-                      <Card id={item.id} title={item.title} content={item.content} data={item.data} />
-                  </div>)) 
-                  :
-                     <S.ErrorMensage >
-                        <div>
-                            <h3> Nenhuma anotação ainda {iconError}</h3>
-                        </div>
-                     </S.ErrorMensage>
-            }
-            
-          </S.ListContainer>
-          <BotaoFixo activateOnModal={actionsModal.openModal}/>
-            
-       </S.Main>
+        <Routes>
+           <Route path='/register' element={<Register/>} />
+           <Route path='/' element={<LoginPage />} />
+          <Route path='/notes' element={<AllNotes />} />
+        
+        </Routes>
     </S.ContainerContent>
-      <S.ContainerModal>
-        { onModal && <Modal activateOffModal={actionsModal.closeModal} />}
-     
-      </S.ContainerModal>
+    
   </S.Container>
+  </Router>
  </>
 
 

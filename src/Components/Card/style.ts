@@ -8,7 +8,8 @@ export const cardContainer=styled.div`
     padding:10px;
     display:flex;
     flex-direction:column;
-    margin:5px;
+    margin: 5px;
+  
     border-radius:5px;
     color:#4bb3b1;
     transition: all ease 1;
@@ -19,7 +20,7 @@ export const cardContainer=styled.div`
       color:white;
     }
     @media screen and (max-width:600px){
-       height:70px;
+       
        width:80vw;
        margin:0;
        margin-top:10px;
@@ -41,7 +42,6 @@ export const cardData=styled.div`
 export const cardContent=styled.div`
     flex:1;
     margin-top:10px;
-
     textarea{
     width:100%;
     height:100%;
@@ -51,7 +51,8 @@ export const cardContent=styled.div`
 
     }
     @media screen and (max-width:600px){
-        display:none;
+        overflow: none;
+       
     }
 
 `
