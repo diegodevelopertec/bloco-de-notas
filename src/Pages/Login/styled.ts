@@ -14,7 +14,8 @@ padding: 15px;
 display: flex;
 flex-direction: column;
 width: 600px;
-height: 350px;
+height: 350px
+;
 background-color: #0e082b;
 border-radius: 10px;
 color: #eee;
