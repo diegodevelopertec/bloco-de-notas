@@ -6,7 +6,7 @@
     border: none;
     height: 50px;
     width:50px;
-    background-color:#06415e;
+    background-color: #180e4b;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@
 
 .botao-fixo:hover{
     cursor:pointer;
-    background-color: #03324a;
+    background-color: #0e082b;
 }
 
 @media screen and (max-width:780px){

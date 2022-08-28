@@ -10,17 +10,34 @@ justify-content: center;
 `
 
 export const ContainerForm=styled.div`
-padding: 10px;
+padding: 15px;
 display: flex;
 flex-direction: column;
 width: 600px;
-background-color:#03324a;
+height: 350px;
+background-color: #0e082b;
 border-radius: 10px;
 color: #eee;
-max-height:360px;
+
 margin-top: 100px;
 box-shadow: 0px 0px 20px rgb(73, 70, 85);
 
+.link-resgister{
+    margin-top: 16px;
+    margin-bottom: 16px;
+display: flex;
+justify-content: center;
+
+
+a{
+    color: white;
+    text-decoration: none;
+    &:hover{
+        color: #362b6e;
+        text-decoration: underline;
+    }
+}
+}
 
 h3{
    
@@ -47,13 +64,10 @@ h3{
        border: none;
     }
 
-
-
-
 }
 .cx-button{
     display: flex;
-    margin-top: 30px;
+    margin-top: 35px;
     justify-content: center;
    
     a{

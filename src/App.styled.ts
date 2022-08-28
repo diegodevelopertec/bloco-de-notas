@@ -7,11 +7,11 @@ display:flex;
 flex-direction:column;
 width:100vw;
 overflow-x:hidden;
-background:#e0e0e0;
+background:white;
 `
 
 export const Header=styled.header`
-background-color:#03324a;
+background-color: #0e082b;
 color:#4bb3b1;
 padding:15px;
 font-size:22px;

@@ -41,7 +41,7 @@ return <>
         <Routes>
            <Route path='/register' element={<Register/>} />
            <Route path='/' element={<LoginPage />} />
-          <Route path='/notes' element={<AllNotes />} />
+           <Route path='/notes' element={<AllNotes />} />
         
         </Routes>
     </S.ContainerContent>
