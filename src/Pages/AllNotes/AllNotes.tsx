@@ -12,6 +12,65 @@ export const AllNotes=()=>{
     const [list,setListOfNotes]=useState(Notes)
     const [onModal,setOnModal]=useState(false)
     const [opacity,setOpacity]=useState(false)
+   let [onView,setOnView]=useState(false)
+
+
+
+
+
+  
+  const actionsCard={
+  
+
+  
+    clikedView:()=>{
+      document.querySelectorAll('.link-view').forEach(item=>{
+         item.addEventListener('click',()=>{
+           console.log('view');
+           })
+       })
+       setOnView(true)
+     },
+  
+        clikedDelete:()=>{
+         document.querySelectorAll('.link-lixeira').forEach(item=>{
+            item.addEventListener('click',()=>{
+             console.log('lixeira');
+              })
+          })
+          setOnView(false)
+        }
+  
+  
+  
+  
+      }
+
+useEffect(()=>{
+return undefined
+},[onView])
+
+/*clikedDelete=()=>{
+
+  document.querySelectorAll('.link-lixeira').forEach(item=>{
+    item.addEventListener('click',()=>{
+      alert('lixeira');
+       
+
+
+
+    })
+
+
+    clikedView:()=>{
+
+    document.querySelectorAll('.link-view').forEach(item=>{
+      item.addEventListener('click',()=>{
+        alert('hi');
+      })}
+    
+  })*/
+
 
 
 
@@ -42,13 +101,15 @@ useEffect(()=>{
             }
      }
        
-
+useEffect(()=>{
+return undefined
+},[actionsCard])
     return <>
     <S.Main id='list-container'>
-          <S.ListContainer>
+          <S.ListContainer className="list-card-container">
             { list.length !== 0 ?  list.map((item,index)=>(
                   <div key={index} >
-                      <Card id={item.id} title={item.title} content={item.content} data={item.data} />
+                      <Card  cardSelectedDelete={actionsCard.clikedDelete}  cardSelectedView={actionsCard.clikedView} id={item.id} title={item.title} content={item.content} data={item.data} />
                   </div>)) 
                   :
                      <S.ErrorMensage >
@@ -65,8 +126,7 @@ useEffect(()=>{
        <div>
        <S.ContainerModal>
            { onModal && <Modal activateOffModal={actionsModal.closeModal} />}
-     
-      </S.ContainerModal>
+       </S.ContainerModal>
        </div>
      
     

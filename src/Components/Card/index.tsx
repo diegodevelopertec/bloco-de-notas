@@ -1,14 +1,25 @@
-import React from "react"
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
 import * as S from './style'
-
+import ViewImage from '../../assets/images/view.png'
+import LixeiraImage from '../../assets/images/lixeira.png'
 
 type Props ={
     id:number,
     title:string,
     content:string,
-    data:string
+    data:string,
+    cardSelectedView:()=>void,
+    cardSelectedDelete:()=>void
 }
-export const Card=({id,title,content,data}:Props)=>{
+export const Card=({id,title,content,data,cardSelectedDelete,cardSelectedView}:Props)=>{
+
+ const [selectedCard,setSelected]=useState(false)
+
+
+
+
+  
     return <>
     <S.cardContainer className="cardItem">
         <S.cardData>
@@ -18,6 +29,11 @@ export const Card=({id,title,content,data}:Props)=>{
         <S.cardContent>
             <textarea disabled name="" id="" value={content}></textarea>
         </S.cardContent>
+        <S.ContainerActionsModal>
+            <a className="link-view" onClick={cardSelectedView} ><img  src={ViewImage} alt="" /></a>
+            <a className="link-lixeira" onClick={cardSelectedDelete}><img src={LixeiraImage} alt="" /></a>
+            
+        </S.ContainerActionsModal>
     </S.cardContainer>
  
 

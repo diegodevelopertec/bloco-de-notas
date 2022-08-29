@@ -42,10 +42,13 @@ export const cardData=styled.div`
 export const cardContent=styled.div`
     flex:1;
     margin-top:10px;
+   
     textarea{
     width:100%;
-    height:100%;
+    height: 100%;
     resize:none;
+    border-radius: 6px;
+    background-color: #16104a;
     padding:10px;
     overflow:none;
 
@@ -55,4 +58,29 @@ export const cardContent=styled.div`
        
     }
 
+`
+
+export const ContainerActionsModal=styled.div`
+display:flex;
+justify-content: flex-end;
+margin-top: 12px;
+margin-bottom: 12px;
+
+a{
+    text-decoration:none;
+    background-color:#eee;
+    margin-left:6px;
+    margin-right:6px;
+     padding: 6px;
+     border-radius: 5px;
+
+
+     &:hover{
+         background-color:#16104a;
+     }
+   img{
+    height: 20px;
+    width: 20px;
+   }
+}
 `
