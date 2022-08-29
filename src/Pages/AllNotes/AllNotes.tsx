@@ -27,6 +27,7 @@ export const AllNotes=()=>{
       document.querySelectorAll('.link-view').forEach(item=>{
          item.addEventListener('click',()=>{
            console.log('view');
+           alert('view');
            })
        })
        setOnView(true)
@@ -36,6 +37,7 @@ export const AllNotes=()=>{
          document.querySelectorAll('.link-lixeira').forEach(item=>{
             item.addEventListener('click',()=>{
              console.log('lixeira');
+             alert('lixeira');
               })
           })
           setOnView(false)
