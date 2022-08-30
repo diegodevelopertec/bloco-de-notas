@@ -56,7 +56,7 @@ img{
     padding:10px;
     border-radius:5px;
     margin-left:12px;
-    box-shadow:0 0 10px blue;
+    box-shadow: 0px 0px 10px rgb(73, 70, 85);
     height:80px;
 }
 

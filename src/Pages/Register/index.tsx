@@ -36,7 +36,7 @@ const actionsFormRegister={
                 <input type="password" value={passwordRegister} onChange={actionsFormRegister.getPassword} placeholder='Digite uma senha'/>
              </div>
              <div className="cx-register-btn">
-                <Link to={'/'}>cadastrar</Link>
+                <Link to={'/'}>salvar</Link>
              </div>
 
 

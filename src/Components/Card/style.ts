@@ -76,7 +76,8 @@ a{
 
 
      &:hover{
-         background-color:#16104a;
+        background-color:#33cc52;
+         cursor: pointer;
      }
    img{
     height: 20px;

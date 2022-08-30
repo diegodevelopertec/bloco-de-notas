@@ -24,7 +24,8 @@ export const ContainerContent=styled.div`
 display:flex;
 justify-content:center;
 flex-direction: column;
-
+background-color: #202021;
+overflow-y: auto;
 @media screen and (max-width:600px){
     align-items:center;
 }
