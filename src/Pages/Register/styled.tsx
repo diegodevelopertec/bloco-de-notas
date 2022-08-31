@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const RegisterContainer=styled.div`
 width: 100vw;
 height:100vh;
-overflow:hidden;
+overflow:none;
 display: flex;
 justify-content: center;
 
@@ -39,11 +39,19 @@ h3{
         text-align: center;
         padding: 10px;
         background-color: #aaa;
+        border-top-left-radius:6px;
+       border-bottom-left-radius:6px;
+        img{
+            width: 20px;
+            height: 20px;
+        }
     }
     input{
         padding: 10px;
        border: none;
         width: 100%;
+        border-top-right-radius:6px;
+      border-bottom-right-radius:6px;
     }
 }
 

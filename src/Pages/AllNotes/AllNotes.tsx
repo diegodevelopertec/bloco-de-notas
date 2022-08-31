@@ -1,20 +1,20 @@
 import React from "react"
-import { useState,useEffect } from "react"
+import { useState,useEffect,useRef } from "react"
 import { Notes } from "../../data/notes"
 import { Card } from "../../Components/Card"
 import { Modal } from "../../Components/Modal"
 import { BotaoFixo } from "../../Components/BotaoFixo"
 import * as S from './styled'
 
-let cardCliked
+
 
 
 export const AllNotes=()=>{
-    const iconError=<img src="https://img.icons8.com/fluency/96/000000/error.png"/>
+     const iconError=<img src="https://img.icons8.com/fluency/96/000000/error.png"/>
     const [list,setListOfNotes]=useState(Notes)
-    const [onModal,setOnModal]=useState(false)
-    const [opacity,setOpacity]=useState(false)
-   let [onView,setOnView]=useState(false)
+     const [onModal,setOnModal]=useState(false)
+     const [opacity,setOpacity]=useState(false)
+      let [onView,setOnView]=useState(false)
 
 
 
@@ -24,9 +24,10 @@ export const AllNotes=()=>{
 const  clikedView=()=>{
       document.querySelectorAll('.link-view').forEach(item=>{
       item.addEventListener('click',e=>{
-        let cliked=e.target as HTMLLinkElement
-        let cardCliked=cliked.closest('.cardItem') as HTMLDivElement
-
+   
+        let text=item.closest('textarea')?.innerText
+        console.log(text);
+        
       
         
    
@@ -45,18 +46,28 @@ return <>{clikedView}</>
 
   }
 
+useEffect(()=>{
+  clikedView()
+}
 
+,[clikedView])
 
 
 
 
 const clikedDelete=()=>{
          document.querySelectorAll('.link-lixeira').forEach(item=>{
-            item.addEventListener('click',()=>{
-             console.log('lixeira');
-             alert('lixeira');
+              item.addEventListener('click',e=>{
+                let a=e.target as HTMLLinkElement
+               let titleCard=a.closest('#title-card')?.innerHTML
+               console.log(titleCard);
+               
+                
+
+
+
               })
-          })
+         })
           setOnView(false)
         }
 
@@ -94,7 +105,7 @@ return <>
           <S.ListContainer className="list-card-container">
             { list.length !== 0 ?  list.map((item,index)=>(
                   <div key={index} >
-                      <Card  cardSelectedDelete={clikedDelete}  cardSelectedView={clikedView} id={item.id} title={item.title} content={item.content} data={item.data} />
+                      <Card   cardSelectedDelete={clikedDelete}  cardSelectedView={clikedView} id={item.id} title={item.title} content={item.content} data={item.data} />
                   </div>)) 
                   :
                      <S.ErrorMensage >

@@ -23,6 +23,7 @@ width:100vw;
 export const ContainerContent=styled.div`
 display:flex;
 justify-content:center;
+overflow: none;
 flex-direction: column;
 background-color: #202021;
 overflow-y: auto;

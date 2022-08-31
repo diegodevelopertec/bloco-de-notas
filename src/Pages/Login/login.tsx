@@ -1,6 +1,15 @@
 import { ChangeEvent, useEffect, useState } from 'react'
 import  * as S from './styled'
 import { Link } from 'react-router-dom'
+import emailIcon from '../../assets/images/email.svg'
+import passwordIcon from '../../assets/images/password.svg'
+
+
+
+
+
+
+
 export const LoginPage=()=>{
 
 
@@ -28,12 +37,12 @@ const formActions={
             <h3>Preencha com suas Informações</h3>
             <form action="">
                 <div className='cx-form'>
-                    <span>Email</span>
+                    <span><img src={emailIcon} alt="" /></span>
                     <input type="email" name="" id="" value={emailInput}  onChange={formActions.funcEmailInput}/>
                 </div>
 
                 <div className='cx-form'>
-                    <span>senha</span>
+                    <span><img src={passwordIcon} alt="" /></span>
                     <input type="password" name="" id="" value={passwordInput}  onChange={formActions.funcPassInput} />
                 </div>
 
@@ -41,7 +50,7 @@ const formActions={
                      <Link to='/notes'>Entrar</Link>
                 </div>
                 <div className="link-resgister">
-                        <Link className='' to={'/register'}>cadastar</Link>
+                        <Link className='btn-link' to={'/register'}>cadastar</Link>
                 </div>
             </form>
 

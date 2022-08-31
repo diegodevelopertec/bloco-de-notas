@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { ReactComponentElement, useState } from "react"
 import { Link } from "react-router-dom"
 import * as S from './style'
 import ViewImage from '../../assets/images/view.png'
@@ -10,7 +10,8 @@ type Props ={
     content:string,
     data:string,
     cardSelectedView:()=>void,
-    cardSelectedDelete:()=>void
+    cardSelectedDelete:()=>void,
+  
 }
 export const Card=({id,title,content,data,cardSelectedDelete,cardSelectedView}:Props)=>{
 
@@ -23,7 +24,7 @@ export const Card=({id,title,content,data,cardSelectedDelete,cardSelectedView}:P
     return <>
     <S.cardContainer className="cardItem">
         <S.cardData>
-            <span><h3>{title}</h3></span>
+            <span><h3 id="title-card">{title}</h3></span>
             <span><h3>{data}</h3></span>
         </S.cardData>
         <S.cardContent>

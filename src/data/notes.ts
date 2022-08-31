@@ -31,23 +31,3 @@ export const Notes:List[]=[
     {id:27,title:'aprenda Node',content:'estou estudando node js',data:d.toLocaleDateString()},
 
 ]
-
-{/*<S.Main id='list-container'>
-          <S.ListContainer>
-            { list.length !== 0 ?  list.map((item,index)=>(
-                  <div key={index} >
-                      <Card id={item.id} title={item.title} content={item.content} data={item.data} />
-                  </div>)) 
-                  :
-                     <S.ErrorMensage >
-                        <div>
-                            <h3> Nenhuma anotação ainda {iconError}</h3>
-                        </div>
-                     </S.ErrorMensage>
-            }
-            
-          </S.ListContainer>
-          <BotaoFixo activateOnModal={actionsModal.openModal}/>
-            
-       </S.Main>
-          */}

@@ -7,6 +7,6 @@
 }
 body{
   scroll-behavior: smooth;
- overflow-y:auto;
+ overflow:none;
   background-color:#beccc9;
 }

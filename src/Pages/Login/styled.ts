@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Login=styled.div`
 height: 100vh;
-width: 100vw;
+overflow:none;
 display: flex;
 justify-content: center;
 
@@ -58,8 +58,16 @@ h3{
         padding:10px;
       background-color: #eee;
       color:#03324a ;
+      border-top-left-radius:6px;
+      border-bottom-left-radius:6px;
+      img{
+        height: 20px;
+        width: 20px;
+      }
     }
     input{
+        border-top-right-radius:6px;
+        border-bottom-right-radius:6px;
        padding: 10px;
        width: 100%;
        border: none;
@@ -88,6 +96,7 @@ h3{
             background-color:#0a910a;
             cursor: pointer;
         }
+
 }
 
 
