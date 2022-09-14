@@ -83,22 +83,27 @@
     border: none;
     color: white;
     font-weight: bold;
+   
 }
 .modalButtons .BtnCancel{
     background-color:#cf3037;
     margin-right: 5px;
+    box-shadow: 5px 5px #821e23;;
 }
 .modalButtons .BtnCancel:hover{
     background-color: #b8040d;
+    box-shadow: 5px 5px #810b10;
     margin-right: 5px;
     cursor: pointer;
 }
 .modalButtons .BtnAdd{
     background-color:#139c4e ;
+    box-shadow: 5px 5px #127a3f ;
     margin-left: 5px;
 }
 .modalButtons .BtnAdd:hover{
-    background-color:#0b9e1f;
+    background-color:#15bc2c;
+    box-shadow: 5px 5px #137d21;;
     margin-left: 5px;
     cursor: pointer;
 }

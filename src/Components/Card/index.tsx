@@ -11,9 +11,9 @@ type Props ={
     data:string,
     cardSelectedView:()=>void,
     cardSelectedDelete:()=>void,
-  
+    cardCliked?:boolean
 }
-export const Card=({id,title,content,data,cardSelectedDelete,cardSelectedView}:Props)=>{
+export const Card=({id,title,content,data,cardSelectedDelete,cardSelectedView, cardCliked}:Props)=>{
 
  const [selectedCard,setSelected]=useState(false)
 

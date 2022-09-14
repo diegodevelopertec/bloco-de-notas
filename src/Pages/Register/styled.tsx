@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const RegisterContainer=styled.div`
-width: 100vw;
 height:100vh;
-overflow:none;
+
+overflow:auto;
 display: flex;
 justify-content: center;
 
@@ -65,7 +65,8 @@ h3{
     
 
     a{
-        background-color: green;
+        background-color:#139c4e ;
+    box-shadow: 5px 5px #127a3f ;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -75,6 +76,11 @@ h3{
         width: 50%;
        border-radius: 12px;
      
+
+       &:hover{
+        background-color:#15bc2c;
+        box-shadow: 5px 5px #137d21;;
+       }
     }
 }
 @media screen and (max-width:800px) {

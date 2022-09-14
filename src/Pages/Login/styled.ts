@@ -2,9 +2,11 @@ import styled from "styled-components";
 
 export const Login=styled.div`
 height: 100vh;
-overflow:none;
 display: flex;
 justify-content: center;
+
+
+
 
 
 `
@@ -14,8 +16,7 @@ padding: 15px;
 display: flex;
 flex-direction: column;
 width: 600px;
-height: 350px
-;
+height: 350px;
 background-color: #0e082b;
 border-radius: 10px;
 color: #eee;
@@ -23,7 +24,7 @@ color: #eee;
 margin-top: 100px;
 box-shadow: 0px 0px 20px rgb(73, 70, 85);
 
-.link-resgister{
+.link-register{
     margin-top: 16px;
     margin-bottom: 16px;
 display: flex;
@@ -87,21 +88,24 @@ h3{
        padding: 12px 20px;
        border: none;
        color: #eee;
-        background-color: green;
+       background-color:#139c4e ;
+    box-shadow: 5px 5px #127a3f ;
         border-radius:12px;
 
         
     }
     a:hover{
-            background-color:#0a910a;
+        background-color:#15bc2c;
+    box-shadow: 5px 5px #137d21;
             cursor: pointer;
         }
 
 }
 
 
-@media screen and (max-width:900px){
+@media screen and (max-width:915px){
     max-width: 90vw;
+    margin-top: 150px;
  
     h3{
       text-align: center;

@@ -49,7 +49,7 @@ const formActions={
                 <div className="cx-button">
                      <Link to='/notes'>Entrar</Link>
                 </div>
-                <div className="link-resgister">
+                <div className="link-register">
                         <Link className='btn-link' to={'/register'}>cadastar</Link>
                 </div>
             </form>

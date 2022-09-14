@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import * as S from './App.styled'
-import { Notes } from './data/notes'
 import { AllNotes } from './Pages/AllNotes/AllNotes'
 import { LoginPage } from './Pages/Login/login'
 import { Register } from './Pages/Register'

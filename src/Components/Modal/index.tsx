@@ -1,13 +1,14 @@
 import { ChangeEvent, useEffect, useState } from 'react'
+import { useNotes } from '../../hooks/itemlist'
 import S from './style.module.css'
-import {Notes} from '../../data/notes'
+//import {Notes} from '../../data/notes'
 
 
 
 //types
 type Props={
-    activateOffModal:()=>void;
-
+    activateOffModal:()=>void,
+   
 }
 
 
@@ -15,9 +16,11 @@ export const Modal=({activateOffModal}:Props)=>{
 
 //variables
 const d=new Date()
-const [title,setTitle]=useState('')
-const [content,setNoteContent]=useState('')
+const [titleInput,setTitleInput]=useState('')
+const [contentInput,setNoteContentInput]=useState('')
 const [error,setError]=useState(false)
+const [list,listDispacth]=useNotes()
+
 
 
 
@@ -25,16 +28,36 @@ const [error,setError]=useState(false)
 //functions
 const formActions={
     titleContent:(e:ChangeEvent<HTMLInputElement>)=>{
-        setTitle(e.target.value)
+        setTitleInput(e.target.value)
     },
     noteContent:(e:ChangeEvent<HTMLTextAreaElement>)=>{
-        setNoteContent(e.target.value)
+        setNoteContentInput(e.target.value)
     }
 }
-
-
+const addNote=()=>{
+   if(list){
+    listDispacth({
+        type:'add',
+        payload:{
+          id:Math.floor(Math.random() * 300),
+          title:titleInput,
+          content: contentInput,
+          data:d.toLocaleDateString()
+        }
+       
+    })
+    activateOffModal()
+   }
+    
+  
+  
+  
+  
+  
+   }
+/*
 const addNewNote=()=>{
-    if(title && content){
+   /* if(title && content){
   
         let item={
             id:Notes.length + 1,
@@ -52,22 +75,23 @@ const addNewNote=()=>{
 
 
 }
+*/
 
 return <>
         <div className={S.modalContainer}>
             <div className={S.modalData}>
                 <div className={S.dataTitle}>
                     <div className={S.title}>Titulo</div>
-                  <div className={S.cxInput}>  <input  type="text" value={title} onChange={formActions.titleContent}  /></div>
+                  <div className={S.cxInput}>  <input  type="text" value={titleInput} onChange={formActions.titleContent}  /></div>
                 </div>
                 <div className={S.dataContent}>
                     <span>Anotação</span>
-                    <textarea name="" id=""  value={content} onChange={formActions.noteContent} ></textarea>
+                    <textarea name="" id=""  value={contentInput} onChange={formActions.noteContent} ></textarea>
                 </div>
             </div>
             <div className={S.modalButtons}>
                     <button onClick={activateOffModal} className={S.BtnCancel}>cancelar</button>
-                    <button onClick={addNewNote} className={S.BtnAdd}>salvar</button>
+                    <button onClick={addNote} className={S.BtnAdd}>salvar</button>
             </div> 
         </div>
 

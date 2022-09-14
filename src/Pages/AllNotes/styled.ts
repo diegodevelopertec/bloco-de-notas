@@ -5,8 +5,9 @@ export const Main=styled.main`
 display:flex;
 flex-wrap:wrap ;
 justify-content:center;
-overflow-y:auto;
+overflow:none;
 min-height: 400px;
+width: 100vw;
 
 
 @media screen and (max-width:920px){
@@ -75,6 +76,8 @@ display:flex;
 justify-content:center;
 align-items:Center;
 margin-top:18%;
+overflow: none;
+width: 100vw;
 
 
 @media screen and (max-width:600px){

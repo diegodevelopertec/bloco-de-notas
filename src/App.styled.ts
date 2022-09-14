@@ -5,9 +5,8 @@ import styled from 'styled-components'
 export const Container=styled.div`
 display:flex;
 flex-direction:column;
-width:100vw;
-overflow-x:hidden;
 background:white;
+overflow: hidden;
 `
 
 export const Header=styled.header`
@@ -23,10 +22,9 @@ width:100vw;
 export const ContainerContent=styled.div`
 display:flex;
 justify-content:center;
-overflow: none;
 flex-direction: column;
 background-color: #202021;
-overflow-y: auto;
+overflow: none;
 @media screen and (max-width:600px){
     align-items:center;
 }
