@@ -19,7 +19,6 @@ let initialStateContext={
     notes:notesInitialState
 }
 
-
 export const Context=createContext<ContextType>({
     state: initialStateContext,
     dispatch:()=>null

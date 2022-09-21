@@ -1,4 +1,5 @@
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useContext, useEffect, useState } from 'react'
+import { Context } from '../../context/context'
 import { useNotes } from '../../hooks/itemlist'
 import S from './style.module.css'
 //import {Notes} from '../../data/notes'
@@ -19,7 +20,7 @@ const d=new Date()
 const [titleInput,setTitleInput]=useState('')
 const [contentInput,setNoteContentInput]=useState('')
 const [error,setError]=useState(false)
-const [list,listDispacth]=useNotes()
+const {state,dispatch}=useContext(Context)
 
 
 
@@ -35,26 +36,21 @@ const formActions={
     }
 }
 const addNote=()=>{
-   if(list){
-    listDispacth({
-        type:'add',
-        payload:{
-          id:Math.floor(Math.random() * 300),
-          title:titleInput,
-          content: contentInput,
-          data:d.toLocaleDateString()
-        }
-       
-    })
+
+    if(titleInput && contentInput){
+        dispatch({
+            type:'add',
+            payload:{
+                title:titleInput,
+                content:contentInput
+            }
+        })
+
+
+
     activateOffModal()
    }
-    
-  
-  
-  
-  
-  
-   }
+    }
 /*
 const addNewNote=()=>{
    /* if(title && content){

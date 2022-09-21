@@ -1,25 +1,27 @@
-import React from "react"
+import React, { useContext } from "react"
 import { useState,useEffect,useRef } from "react"
 import { Card } from "../../Components/Card"
 import { Modal } from "../../Components/Modal"
 import { BotaoFixo } from "../../Components/BotaoFixo"
 import * as S from './styled'
 import { useNotes } from "../../hooks/itemlist"
+import { Context } from "../../context/context"
 
 
 
 
 export const AllNotes=()=>{
      const iconError=<img src="https://img.icons8.com/fluency/96/000000/error.png"/>
-     const [list,listDispacth]=useNotes()
+     const {state,dispatch}=useContext(Context)
      const [onModal,setOnModal]=useState(false)
      const [opacity,setOpacity]=useState(false)
-     const [delitem,setDelItem]=useState()
+  
 
 
 useEffect(()=>{
+console.log(state.notes);
 
-},[list])
+},[state.notes])
 
  useEffect(()=>{
         let container=document.getElementById('list-container') as HTMLDivElement
@@ -84,12 +86,12 @@ const clikedDelete=()=>{
 return <>
     <S.Main id='list-container'>
           <S.ListContainer className="list-card-container">
-            {list.length !== 0 &&   list.map((item,index)=>(
+            {state.notes.length !== 0 ?   state.notes.map((item:any,index:any)=>(
                   <div key={index} >
                       <Card   cardSelectedDelete={clikedDelete}  cardSelectedView={clikedView} id={item.id} title={item.title} content={item.content} data={item.data} />
                   </div>)) 
-}
-                    { <S.ErrorMensage >
+:
+                    <S.ErrorMensage >
                         <div>
                             <h3> Nenhuma anotação ainda {iconError}</h3>
                         </div>
