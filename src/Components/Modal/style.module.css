@@ -10,7 +10,7 @@
     border-radius: 10px;
     position: fixed;
     top: 180px;
-    box-shadow: 0px 0px 10px rgb(73, 70, 85);
+    transition: all ease .4s;
 }
 
 
@@ -86,6 +86,7 @@
    
 }
 .modalButtons .BtnCancel{
+    transition: all ease .4s;
     background-color:#cf3037;
     margin-right: 5px;
     box-shadow: 5px 5px #821e23;;
@@ -97,6 +98,7 @@
     cursor: pointer;
 }
 .modalButtons .BtnAdd{
+    transition: all ease .4s;
     background-color:#139c4e ;
     box-shadow: 5px 5px #127a3f ;
     margin-left: 5px;

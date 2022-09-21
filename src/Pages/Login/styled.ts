@@ -55,6 +55,9 @@ h3{
 
 
     span{
+        display:flex;
+    justify-content:center;
+    align-items:center;
        text-align: center;
         padding:10px;
       background-color: #eee;
@@ -69,7 +72,7 @@ h3{
     input{
         border-top-right-radius:6px;
         border-bottom-right-radius:6px;
-       padding: 10px;
+       padding: 15px;
        width: 100%;
        border: none;
     }
@@ -91,7 +94,7 @@ h3{
        background-color:#139c4e ;
     box-shadow: 5px 5px #127a3f ;
         border-radius:12px;
-
+        transition: all ease .3s;
         
     }
     a:hover{

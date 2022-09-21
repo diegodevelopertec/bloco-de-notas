@@ -10,7 +10,7 @@ const App=()=>{
  
   
   const [cardModal,setCardModal]=useState(false)
-  const  logo=<img height={40} src="https://img.icons8.com/external-icongeek26-flat-icongeek26/64/000000/external-notes-physics-icongeek26-flat-icongeek26.png"/>
+
  
 
 
@@ -35,7 +35,7 @@ useEffect(()=>{
 return <>
   <Router>
   <S.Container>
-    <S.Header>WordBlock {logo}</S.Header>
+    <S.Header>WordBlock </S.Header>
       <S.ContainerContent>
         <Routes>
            <Route path='/register' element={<Register/>} />

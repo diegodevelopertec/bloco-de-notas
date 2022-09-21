@@ -25,9 +25,11 @@ useEffect(()=>{
         let container=document.getElementById('list-container') as HTMLDivElement
             if(opacity){    
               container.style.opacity='0.5'
+            
              
             }else{
                   container.style.opacity='1'
+                 
                 
             }
  },[opacity])

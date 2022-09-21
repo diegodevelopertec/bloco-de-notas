@@ -27,6 +27,7 @@ overflow: hidden;
 
 
 
+
 @media screen and (max-width:700px){
     margin-top:20px;
     align-items:center;
@@ -41,8 +42,9 @@ export const ErrorMensage=styled.div`
 display:flex;
 text-align:center;
 margin-top:150px;
-
 justify-content:center;
+opacity:0.5;
+
 
 h3{
     color:#787d7b;
@@ -57,7 +59,6 @@ img{
     padding:10px;
     border-radius:5px;
     margin-left:12px;
-    box-shadow: 0px 0px 10px rgb(73, 70, 85);
     height:80px;
 }
 

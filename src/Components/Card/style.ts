@@ -12,7 +12,7 @@ export const cardContainer=styled.div`
   
     border-radius:5px;
     color:#4bb3b1;
-    transition: all ease 1;
+    transition: all ease .4s;
 
   
     :hover{

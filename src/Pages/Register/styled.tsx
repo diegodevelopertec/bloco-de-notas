@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 export const RegisterContainer=styled.div`
 height:100vh;
-
+padding: 15px;
 overflow:auto;
 display: flex;
 justify-content: center;
+
 
 `
 
@@ -19,7 +20,7 @@ border-radius: 12px;
 padding: 10px;
 display: flex;
 flex-direction: column;
-box-shadow: 0px 0px 20px rgb(73, 70, 85);
+box-shadow: 0px 0px 10px rgb(73, 70, 85);
 
 
 h3{
@@ -34,7 +35,9 @@ h3{
     
    
    span{
-   
+    display:flex;
+    justify-content:center;
+    align-items:center;
        min-width: 60px;
         text-align: center;
         padding: 10px;
@@ -47,7 +50,7 @@ h3{
         }
     }
     input{
-        padding: 10px;
+        padding: 15px;
        border: none;
         width: 100%;
         border-top-right-radius:6px;
@@ -75,7 +78,7 @@ h3{
         padding: 10px 15px;
         width: 50%;
        border-radius: 12px;
-     
+       transition: all ease .4s;
 
        &:hover{
         background-color:#15bc2c;
