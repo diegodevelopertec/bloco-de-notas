@@ -13,6 +13,7 @@ export const AllNotes=()=>{
   
   const iconError=<img src="https://img.icons8.com/fluency/96/000000/error.png"/>
 
+
   //States
   const {state,dispatch}=useContext(Context)
   const [onModal,setOnModal]=useState(false)
@@ -26,13 +27,11 @@ export const AllNotes=()=>{
         let container=document.getElementById('list-container') as HTMLDivElement
             if(opacity){    
               container.style.opacity='0.5'
-           
+              deleteNote('')
              
             }else{
                   container.style.opacity='1'
-                  OrderList()
-               
-                
+                  OrderList() 
             }
  },[opacity])
     
@@ -48,7 +47,7 @@ const OrderList=()=>{
   }
 
   
-const deleteNote=(id:string)=>{
+const deleteNote=(id:string )=>{
   dispatch({
       type:'del',payload:{id}
   })
@@ -76,7 +75,7 @@ return <>
           <S.ListContainer className="list-card-container">
             {state.notes.length !== 0 ?   state.notes.map((item:any,index:any)=>(
                   <div key={index} >
-                      <Card  clickDelete={()=>deleteNote(item.id)}   title={item.title} content={item.content} data={item.date} />
+                      <Card   clickDelete={()=>{onModal ? ()=>null : deleteNote(item.id)}}      title={item.title} content={item.content} data={item.date} />
                   </div>)) 
                     :
                     <S.ErrorMensage >

@@ -1,7 +1,7 @@
 import {notesReducer,InitialStateType,notesInitialState} from '../reducer/useNote'
 import { createContext, ReactNode, useReducer } from 'react'
 import { ActionGeralType } from '../types/ActionGeralTypes'
-
+import {InitialStateTypeModal,modalReducer,modalInitialState} from '../reducer/useModal'
 
 
 type Props={
@@ -14,7 +14,8 @@ type ContextType={
 }
 
 type InitialStateContext={
-    notes:InitialStateType[]
+    notes:InitialStateType[],
+   
 }
 
 let initialStateContext={

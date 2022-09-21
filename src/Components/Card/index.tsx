@@ -5,16 +5,17 @@ import ViewImage from '../../assets/images/view.png'
 import LixeiraImage from '../../assets/images/lixeira.png'
 
 type Props ={
-    id?:string
+    id?:string | boolean,
     title:string,
     content:string,
     data:string,
-   clickDelete:()=>void
+   clickDelete:()=>void,
+   
   
 }
 export const Card=({title,content,data,clickDelete}:Props)=>{
 
-
+   
 
   
     return <>
@@ -28,7 +29,7 @@ export const Card=({title,content,data,clickDelete}:Props)=>{
         </S.cardContent>
         <S.ContainerActionsModal>
             <a className="link-view" ><img  src={ViewImage} alt="" /></a>
-            <a className="link-lixeira" onClick={clickDelete} ><img src={LixeiraImage} alt="" /></a>
+            <a className="link-lixeira"  onClick={clickDelete} ><img src={LixeiraImage} alt="" /></a>
             
         </S.ContainerActionsModal>
     </S.cardContainer>
