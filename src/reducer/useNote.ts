@@ -7,9 +7,12 @@ export type InitialStateType={
     id?:string,
     title:string,
     content:string,
+    date:string
 
 }
 
+
+let d=new Date()
 
 
 export const notesInitialState:InitialStateType[]=[]
@@ -25,7 +28,8 @@ export const notesReducer=(state:InitialStateType[],action:ActionGeralType)=>{
             newState.push({
                 id:uuidv4(),
                 title:action.payload.title,
-                content:action.payload.content
+                content:action.payload.content,
+                date:d.toLocaleDateString()
             })
             return  newState
        }

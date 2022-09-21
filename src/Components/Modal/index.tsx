@@ -15,7 +15,7 @@ type Props={
 
 export const Modal=({activateOffModal}:Props)=>{
 
-//variables
+//states
 const d=new Date()
 const [titleInput,setTitleInput]=useState('')
 const [contentInput,setNoteContentInput]=useState('')
@@ -45,40 +45,18 @@ const addNote=()=>{
                 content:contentInput
             }
         })
-
-
-
     activateOffModal()
    }
     }
-/*
-const addNewNote=()=>{
-   /* if(title && content){
-  
-        let item={
-            id:Notes.length + 1,
-            content,title,
-            data:d.toLocaleDateString()
-        }
-
-        Notes.unshift(item)
-        console.log(Notes);
-        activateOffModal()
-        
-    }else{
-      alert('Todos os campos devem ser Preenchidos')
-    }
 
 
-}
-*/
 
 return <>
         <div className={S.modalContainer}>
             <div className={S.modalData}>
                 <div className={S.dataTitle}>
                     <div className={S.title}>Titulo</div>
-                  <div className={S.cxInput}>  <input  type="text" value={titleInput} onChange={formActions.titleContent}  /></div>
+                  <div className={S.cxInput}>  <input  type="text" value={titleInput} onChange={formActions.titleContent} maxLength={19}  /></div>
                 </div>
                 <div className={S.dataContent}>
                     <span>Anotação</span>

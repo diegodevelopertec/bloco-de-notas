@@ -5,18 +5,14 @@ import ViewImage from '../../assets/images/view.png'
 import LixeiraImage from '../../assets/images/lixeira.png'
 
 type Props ={
-    id:number,
+    id?:string
     title:string,
     content:string,
     data:string,
-    cardSelectedView:()=>void,
-    cardSelectedDelete:()=>void,
-    cardCliked?:boolean
+   clickDelete:(id:string)=>void
+  
 }
-export const Card=({id,title,content,data,cardSelectedDelete,cardSelectedView, cardCliked}:Props)=>{
-
- const [selectedCard,setSelected]=useState(false)
-
+export const Card=({title,content,data,clickDelete}:Props)=>{
 
 
 
@@ -31,8 +27,8 @@ export const Card=({id,title,content,data,cardSelectedDelete,cardSelectedView, c
             <textarea disabled name="" id="" value={content}></textarea>
         </S.cardContent>
         <S.ContainerActionsModal>
-            <a className="link-view" onClick={cardSelectedView} ><img  src={ViewImage} alt="" /></a>
-            <a className="link-lixeira" onClick={cardSelectedDelete}><img src={LixeiraImage} alt="" /></a>
+            <a className="link-view" ><img  src={ViewImage} alt="" /></a>
+            <a className="link-lixeira" onClick={()=>clickDelete} ><img src={LixeiraImage} alt="" /></a>
             
         </S.ContainerActionsModal>
     </S.cardContainer>

@@ -16,7 +16,7 @@ export const cardContainer=styled.div`
 
   
     :hover{
-      background:#0e177d;
+      background:#11192b;
       color:white;
     }
     @media screen and (max-width:600px){
@@ -73,10 +73,13 @@ a{
     margin-right:6px;
      padding: 6px;
      border-radius: 5px;
+     box-shadow:2px 2px 0 #909091;
+     transition:all ease .3s;
 
 
      &:hover{
         background-color:#33cc52;
+        box-shadow: 2px 2px 0 #186b27;
          cursor: pointer;
      }
    img{
