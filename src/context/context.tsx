@@ -4,7 +4,9 @@ import { ActionGeralType } from '../types/ActionGeralTypes'
 
 
 
-
+type Props={
+    children:ReactNode
+}
 
 type ContextType={
     state:InitialStateContext,
@@ -28,9 +30,7 @@ const mainReducer=(state:InitialStateContext,action:ActionGeralType)=>({
     notes:notesReducer(state.notes,action)
 })
 
-type Props={
-    children:ReactNode
-}
+
 
 export const ContextProvider=({children}:Props)=>{
 const [state,dispatch]=useReducer(mainReducer,initialStateContext)

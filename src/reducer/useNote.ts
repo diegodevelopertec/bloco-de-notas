@@ -15,7 +15,24 @@ export type InitialStateType={
 let d=new Date()
 
 
-export const notesInitialState:InitialStateType[]=[]
+export const notesInitialState:InitialStateType[]=[
+    {id:uuidv4(),title:'aprenda React',content:'estou estudando react js',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda Desenvolvimento web',content:'estou estudando dev web',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda Mongoose',content:'estou estudando mongo js',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda css',content:'estou estudando css',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda Node',content:'estou estudando node js',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda React',content:'estou estudando react js',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda Desenvolvimento web',content:'estou estudando dev web',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda React',content:'estou estudando react js',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda React',content:'estou estudando react js',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda Desenvolvimento web',content:'estou estudando dev web',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda Mongoose',content:'estou estudando mongo js',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda css',content:'estou estudando css',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda Node',content:'estou estudando node js',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda React',content:'estou estudando react js',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda Desenvolvimento web',content:'estou estudando dev web',date:d.toLocaleDateString()},
+    {id:uuidv4(),title:'aprenda React',content:'estou estudando react js',date:d.toLocaleDateString()},
+]
 
 
 export const notesReducer=(state:InitialStateType[],action:ActionGeralType)=>{

@@ -9,7 +9,7 @@ type Props ={
     title:string,
     content:string,
     data:string,
-   clickDelete:(id:string)=>void
+   clickDelete:()=>void
   
 }
 export const Card=({title,content,data,clickDelete}:Props)=>{
@@ -28,7 +28,7 @@ export const Card=({title,content,data,clickDelete}:Props)=>{
         </S.cardContent>
         <S.ContainerActionsModal>
             <a className="link-view" ><img  src={ViewImage} alt="" /></a>
-            <a className="link-lixeira" onClick={()=>clickDelete} ><img src={LixeiraImage} alt="" /></a>
+            <a className="link-lixeira" onClick={clickDelete} ><img src={LixeiraImage} alt="" /></a>
             
         </S.ContainerActionsModal>
     </S.cardContainer>
