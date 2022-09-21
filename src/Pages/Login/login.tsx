@@ -47,10 +47,10 @@ const formActions={
                 </div>
 
                 <div className="cx-button">
-                     <Link to='/notes'>Entrar</Link>
+                     <Link to='/notes' className='link'>Entrar</Link>
                 </div>
                 <div className="link-register">
-                        <Link className='btn-link' to={'/register'}>cadastar</Link>
+                        <Link  to={'/register'}>cadastrar</Link>
                 </div>
             </form>
 

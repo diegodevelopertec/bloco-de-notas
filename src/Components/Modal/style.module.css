@@ -11,6 +11,8 @@
     position: fixed;
     top: 180px;
     transition: all ease .4s;
+    box-shadow: 0 0 13px rgb(130, 144, 209);
+   
 }
 
 

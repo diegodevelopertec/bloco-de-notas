@@ -14,13 +14,13 @@ justify-content: center;
 export const FormRegister=styled.div`
 margin-top: 130px;
 width: 600px;
-height: 330px;
+height: 350px;
 background-color: #0e082b;
 border-radius: 12px;
 padding: 10px;
 display: flex;
 flex-direction: column;
-box-shadow: 0px 0px 10px rgb(73, 70, 85);
+box-shadow: 0px 0px 5px #3d5a8a;
 
 
 h3{
@@ -50,6 +50,8 @@ h3{
         }
     }
     input{
+        color:#b1b3b5;
+        font-size:18px;
         padding: 15px;
        border: none;
         width: 100%;
@@ -64,6 +66,7 @@ h3{
     justify-content: center;
    align-items: center;
    margin-top: 26px;
+   margin-bottom:50px;
    
     
 
@@ -79,6 +82,7 @@ h3{
         width: 50%;
        border-radius: 12px;
        transition: all ease .4s;
+       margin-bottom:15px;
 
        &:hover{
         background-color:#15bc2c;

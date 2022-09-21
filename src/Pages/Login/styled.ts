@@ -4,9 +4,16 @@ export const Login=styled.div`
 height: 100vh;
 display: flex;
 justify-content: center;
+margin-top: 90px;
 
 
 
+
+@media screen  and (max-width:920px){
+    
+    height:100vh;
+    width:100vw;
+}
 
 
 `
@@ -16,27 +23,45 @@ padding: 15px;
 display: flex;
 flex-direction: column;
 width: 600px;
-height: 350px;
+height:400px;
 background-color: #0e082b;
 border-radius: 10px;
 color: #eee;
+box-shadow: 0px 0px 5px #3d5a8a;
 
-margin-top: 100px;
-box-shadow: 0px 0px 20px rgb(73, 70, 85);
+
+@media screen and (max-width:800px){
+    box-shadow: none;
+    margin-top:50px;
+}
 
 .link-register{
+  
     margin-top: 16px;
     margin-bottom: 16px;
-display: flex;
-justify-content: center;
+    display: flex;
+    justify-content: center;
+  
+ 
 
 
 a{
-    color: white;
-    text-decoration: none;
+    text-decoration:none;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    padding: 12px;
+    border: none;
+    color:white;
+    background-color:#607ca8;
+    box-shadow: 5px 5px #3d5a8a;
+    border-radius:12px;
+    transition: all ease .3s;
+
     &:hover{
-        color: #362b6e;
-        text-decoration: underline;
+        background-color:#689bed;
+       box-shadow: 5px 5px #5282d1;
+     
     }
 }
 }
@@ -55,6 +80,7 @@ h3{
 
 
     span{
+        width:70px;
         display:flex;
     justify-content:center;
     align-items:center;
@@ -70,6 +96,8 @@ h3{
       }
     }
     input{
+        color:#b1b3b5;
+        font-size:18px;
         border-top-right-radius:6px;
         border-bottom-right-radius:6px;
        padding: 15px;
@@ -83,7 +111,7 @@ h3{
     margin-top: 35px;
     justify-content: center;
    
-    a{
+    .link{
        width: 50%;
        display: flex;
        text-decoration: none;
@@ -97,18 +125,20 @@ h3{
         transition: all ease .3s;
         
     }
-    a:hover{
+    .link:hover{
         background-color:#15bc2c;
     box-shadow: 5px 5px #137d21;
             cursor: pointer;
         }
 
+
+        
 }
 
 
-@media screen and (max-width:915px){
+@media screen and (max-width:920px){
     max-width: 90vw;
-    margin-top: 150px;
+    margin-top:0;
  
     h3{
       text-align: center;

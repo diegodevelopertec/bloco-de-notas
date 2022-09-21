@@ -25,6 +25,7 @@ justify-content:center;
 flex-direction: column;
 background-color: #202021;
 overflow: none;
+min-height:100vh;
 @media screen and (max-width:600px){
     align-items:center;
 }
