@@ -1,5 +1,5 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react'
-import { Context } from '../../context/context'
+import { Context } from '../../contexts/context'
 import { useNotes } from '../../hooks/itemlist'
 import S from './style.module.css'
 //import {Notes} from '../../data/notes'
@@ -56,11 +56,11 @@ return <>
             <div className={S.modalData}>
                 <div className={S.dataTitle}>
                     <div className={S.title}>Titulo</div>
-                  <div className={S.cxInput}>  <input  type="text" value={titleInput} onChange={formActions.titleContent} maxLength={19}  /></div>
+                  <div className={S.cxInput}>  <input  type="text" placeholder='Titulo da anotação' value={titleInput} onChange={formActions.titleContent} maxLength={19}  /></div>
                 </div>
                 <div className={S.dataContent}>
                     <span>Anotação</span>
-                    <textarea name="" id=""  value={contentInput} onChange={formActions.noteContent} ></textarea>
+                    <textarea name="" id="" placeholder='Digite algo...' value={contentInput} onChange={formActions.noteContent} ></textarea>
                 </div>
             </div>
             <div className={S.modalButtons}>

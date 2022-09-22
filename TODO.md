@@ -4,3 +4,7 @@
 []adicionar uma rota de pesquisa por nome
 []melhorar responsividade
 []refatorar
+login
+limitacao de notas
+paginacao
+retornar na tela

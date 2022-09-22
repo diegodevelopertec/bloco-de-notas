@@ -4,8 +4,8 @@ import { Card } from "../../Components/Card"
 import { Modal } from "../../Components/Modal"
 import { BotaoFixo } from "../../Components/BotaoFixo"
 import * as S from './styled'
-import { Context } from "../../context/context"
-
+import { Context } from "../../contexts/context"
+import { CardItem } from "../../Components/CardItem"
 
 
 
@@ -18,9 +18,7 @@ export const AllNotes=()=>{
   const {state,dispatch}=useContext(Context)
   const [onModal,setOnModal]=useState(false)
   const [opacity,setOpacity]=useState(false)
-  
-
-
+  const [onCardView,setCardView]=useState(false)
 
 //Effects
  useEffect(()=>{
@@ -46,6 +44,17 @@ const OrderList=()=>{
 
   }
 
+
+  const cardCliked=(id:string)=>{
+    dispatch({
+      type:'viewNote',
+     payload:({
+      id
+     })
+    })
+   
+
+  }
   
 const deleteNote=(id:string )=>{
   dispatch({
@@ -65,17 +74,15 @@ const actionsModal={
               setOpacity(()=>false)
             
             }
-     }
-       
-
-
+     
+ }
 
 return <>
     <S.Main id='list-container'>
           <S.ListContainer className="list-card-container">
             {state.notes.length !== 0 ?   state.notes.map((item:any,index:any)=>(
                   <div key={index} >
-                      <Card   clickDelete={()=>{onModal ? ()=>null : deleteNote(item.id)}}      title={item.title} content={item.content} data={item.date} />
+                      <Card clikedView={()=>cardCliked(item.id)} clickDelete={()=>{onModal ? ()=>null : deleteNote(item.id)}}      title={item.title} content={item.content} data={item.date} />
                   </div>)) 
                     :
                     <S.ErrorMensage >
@@ -92,10 +99,12 @@ return <>
        <div>
        <S.ContainerModal>
            { onModal && <Modal  activateOffModal={actionsModal.closeModal} />}
-            
+            {/*<CardItem titleCard="bdhdbe"  contentCard="svhshd" dateCard="bsgh"/>*/}
        </S.ContainerModal>
        </div>
      
     
     </>
 }
+
+

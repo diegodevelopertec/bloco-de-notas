@@ -2,8 +2,8 @@ import styled from 'styled-components'
 
 
 export const cardContainer=styled.div`
-    height:200px;
-    width:300px;
+
+    width:600px;
     background-color: #0e082b;
     padding:10px;
     display:flex;
@@ -45,12 +45,12 @@ export const cardContent=styled.div`
    
     textarea{
     width:100%;
-    height: 100%;
+    height: 250px;
     resize:none;
     border-radius: 6px;
     background-color: #16104a;
     padding:10px;
-    overflow:hidden;
+    overflow:auto;
 
     }
     @media screen and (max-width:600px){
