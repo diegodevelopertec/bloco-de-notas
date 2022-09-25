@@ -51,6 +51,7 @@ export const cardContent=styled.div`
     background-color: #16104a;
     padding:10px;
     overflow:hidden;
+    outline:0;
 
     }
     @media screen and (max-width:600px){

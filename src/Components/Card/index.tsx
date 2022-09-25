@@ -28,7 +28,7 @@ export const Card=({title,content,data,clickDelete,clikedView}:Props)=>{
             <textarea disabled name="" id="" value={content}></textarea>
         </S.cardContent>
         <S.ContainerActionsModal>
-            <a className="link-view" onClick={clikedView} ><img  src={ViewImage} alt="" /></a>
+            <a className="link-view"  onClick={clikedView} ><img  src={ViewImage} alt="" /></a>
             <a className="link-lixeira"  onClick={clickDelete} ><img src={LixeiraImage} alt="" /></a>
             
         </S.ContainerActionsModal>

@@ -3,7 +3,7 @@ import  {v4 as uuidv4} from 'uuid'
 import  { ActionGeralType} from '../types/ActionGeralTypes'
 
 
-export type InitialStateType={
+export type InitialStateNoteType={
     id?:string,
     title:string,
     content:string,
@@ -15,7 +15,7 @@ export type InitialStateType={
 let d=new Date()
 
 
-export const notesInitialState:InitialStateType[]=[
+export const notesInitialState:InitialStateNoteType[]=[
     {id:uuidv4(),title:'aprenda React',content:'estou estudando react js',date:d.toLocaleDateString()},
     {id:uuidv4(),title:'aprenda Desenvolvimento web',content:'estou estudando dev web',date:d.toLocaleDateString()},
     {id:uuidv4(),title:'aprenda Mongoose',content:'estou estudando mongo js',date:d.toLocaleDateString()},
@@ -35,7 +35,7 @@ export const notesInitialState:InitialStateType[]=[
 ]
 
 
-export const notesReducer=(state:InitialStateType[],action:ActionGeralType)=>{
+export const notesReducer=(state:InitialStateNoteType[],action:ActionGeralType)=>{
 
     switch(action.type){
         case 'add':

@@ -14,20 +14,6 @@ const App=()=>{
  
 
 
-useEffect(()=>{
-
-  document.querySelectorAll('.cardItem').forEach(item=>{
-    item.addEventListener('click',(e)=>{
-      let clicado=e.target as HTMLDivElement
-      let id=clicado.id
-      if(id){
-      alert(id);
-      
-          setCardModal(true)
-      }
-    })
-  })
- },[])
 
 
 
@@ -46,6 +32,7 @@ return <>
     </S.ContainerContent>
     
   </S.Container>
+ 
   </Router>
  </>
 
