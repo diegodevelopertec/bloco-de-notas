@@ -30,22 +30,9 @@ const reducer=(state:InitialStateNoteType,action:ActionCardNote)=>{
 
       case 'return data':
         return {...state}
-
-
-
-
   }
-
-  
-
-
   return state
 }
-
-
-
-
-
 
 
 

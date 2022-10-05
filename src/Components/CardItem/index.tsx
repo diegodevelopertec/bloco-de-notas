@@ -14,8 +14,6 @@ clikedDelete?:()=>void
 
 export const CardItem=({idCard,dateCard,titleCard,contentCard}:Props)=>{
 
-   
-     
     return <>
     <S.cardContainer className="cardItem">
         <S.cardData>
