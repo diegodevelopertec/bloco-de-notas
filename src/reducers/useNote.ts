@@ -63,10 +63,10 @@ export const notesReducer=(state:InitialStateNoteType[],action:ActionGeralType)=
             newState=newState.sort((a,b)=>(a.title > b.title) ? 1 : -1)
             return newState
             break;
-           
-          
 
+       
     }
+    
     
 
     return state

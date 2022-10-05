@@ -26,8 +26,8 @@ export const CardItem=({idCard,dateCard,titleCard,contentCard}:Props)=>{
             <textarea disabled name="" id="" value={contentCard}></textarea>
         </S.cardContent>
         <S.ContainerActionsModal>
-            <a className="link-view"  ><img  src={EditImage} alt="" /></a>
-            <a className="link-lixeira"  ><img src={LixeiraImage}  alt="" /></a>
+            <button className="link-view"  ><img  src={EditImage} alt="" /></button>
+            <button className="link-lixeira"  ><img src={LixeiraImage}  alt="" /></button>
             
         </S.ContainerActionsModal>
     </S.cardContainer>

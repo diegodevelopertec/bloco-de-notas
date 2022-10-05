@@ -6,13 +6,12 @@ import { BotaoFixo } from "../../Components/BotaoFixo"
 import * as S from './styled'
 import { Context } from "../../contexts/context"
 import { CardItem } from "../../Components/CardItem"
-
+import errorImageIcons from '../../assets/images/error.png'
 
 
 export const AllNotes=()=>{
   
-  const iconError=<img src="https://img.icons8.com/fluency/96/000000/error.png"/>
-
+ 
 
   //States
   const {state,dispatch}=useContext(Context)
@@ -87,7 +86,7 @@ return <>
                     :
                     <S.ErrorMensage >
                         <div>
-                            <h3> Nenhuma anotação ainda {iconError}</h3>
+                            <h3> Nenhuma anotação ainda <img src={errorImageIcons} alt="" /></h3>
                         </div>
                      </S.ErrorMensage>
             }
@@ -99,7 +98,7 @@ return <>
        <div>
        <S.ContainerModal>
            { onModal && <Modal  activateOffModal={actionsModal.closeModal} />}
-            {/*<CardItem titleCard="bdhdbe"  contentCard="svhshd" dateCard="bsgh"/>*/}
+            {/*<CardItem titleCard={}  contentCard="svhshd" dateCard="bsgh"/>*/}
        </S.ContainerModal>
        </div>
      
