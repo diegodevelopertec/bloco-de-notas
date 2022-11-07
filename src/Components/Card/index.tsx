@@ -6,26 +6,28 @@ import LixeiraImage from '../../assets/images/lixeira.png'
 import {ApiActions} from '../../Api/api'
 
 type Props ={
-    id?:any,
-    title:string,
-    content:string,
-    data:string,
+   info:{
+        id?:any,
+        title:string,
+        content:string,
+        data?:string
+   }
    clickDelete:()=>void,
  
   
 }
-export const Card=({title,content,data,clickDelete}:Props)=>{
+export const Card=({info,clickDelete}:Props)=>{
 
 
   
     return <>
     <S.cardContainer className="cardItem">
         <S.cardData>
-            <span><h3 id="title-card">{title}</h3></span>
-            <span><h3>{data}</h3></span>
+            <span><h3 id="title-card">{info.title}</h3></span>
+            <span><h3>{info.data}</h3></span>
         </S.cardData>
         <S.cardContent>
-            <textarea disabled name="" id="" value={content}></textarea>
+            <textarea disabled name="" id="" value={info.content}></textarea>
         </S.cardContent>
         <S.ContainerActionsModal>
             <a className="link-view"   ><img  src={ViewImage} alt="" /></a>

@@ -18,11 +18,9 @@ export const AllNotes=()=>{
 
   //EFFECTS
  useEffect(()=>{
- {
   loadNotes()
- 
- }
- },[])
+
+ })
     
  //Functions
   const deleteNote=async (id:number )=>{
@@ -59,7 +57,7 @@ return <>
           <S.ListContainer opacityCondition={opacity} className="list-card-container">
             {notes.length !== 0 ?   notes.map((item,index)=>(
                   <div key={index} >
-                      <Card clickDelete={()=>{deleteNote(item.id)}}      title={item.title} content={item.content} data={item.date} />
+                      <Card clickDelete={()=>{deleteNote(item.id)}} info={item} />
                   </div>)) 
                     :
                     <S.ErrorMensage >

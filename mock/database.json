@@ -45,12 +45,6 @@
       "content": "estou aprendendo que react é um framework da web para desnevolvimento de front-ends de aplicações"
     },
     {
-      "title": "nova anotacaoa criada",
-      "content": "anotacao nova na lista",
-      "id": 5,
-      "usersId": 1
-    },
-    {
       "title": "anotacao atualizada",
       "content": "anotacao atualizada",
       "id": 6,
@@ -75,18 +69,6 @@
       "content": "estou aprendendo que react é um framework da web para desnevolvimento de front-ends de aplicações"
     },
     {
-      "title": "nova anotacaoa criada",
-      "content": "anotacao nova na lista",
-      "id": 10,
-      "usersId": 1
-    },
-    {
-      "title": "anotacao atualizada",
-      "content": "anotacao atualizada",
-      "id": 11,
-      "usersId": 2
-    },
-    {
       "id": 12,
       "usersId": 3,
       "title": "back-end. o que é?",
@@ -97,18 +79,6 @@
       "usersId": 1,
       "title": "front-end.O que é ?",
       "content": "frotn-end é todo o conteudo visto na tela de uma aplicaçao.basicamente o front-end é contruido com html,css e Javascript que são rodados por debaixo dos panos."
-    },
-    {
-      "title": "nova anotacaoa criada",
-      "content": "anotacao nova na lista",
-      "id": 15,
-      "usersId": 1
-    },
-    {
-      "usersId": 2,
-      "title": "api organizada",
-      "content": "organizando aa api",
-      "id": 16
     }
   ]
 }
