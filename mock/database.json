@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "name": "Diego",
+      "email": "diegodev@gmail.com",
+      "password": "diegodev97",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "name": "ana",
+      "email": "anadoida@gmail.com",
+      "password": "aninha2297"
+    },
+    {
+      "id": 3,
+      "name": "clara",
+      "email": "claramorzinho@gmail.com",
+      "password": "clara97"
+    },
+    {
+      "id": 4,
+      "name": "Diogo",
+      "email": "diogomoreira@gmail.com",
+      "password": "dev2297"
+    },
+    {
+      "name": "caique",
+      "email": "caiqueestudy@gmail.com",
+      "password": "caiquedev",
+      "id": 5
+    }
+  ],
+  "notes": [
+    {
+      "id": 3,
+      "usersId": 1,
+      "title": "front-end.O que é ?",
+      "content": "frotn-end é todo o conteudo visto na tela de uma aplicaçao.basicamente o front-end é contruido com html,css e Javascript que são rodados por debaixo dos panos."
+    },
+    {
+      "id": 4,
+      "usersId": 2,
+      "title": "uma anotação qualquer",
+      "content": "estou aprendendo que react é um framework da web para desnevolvimento de front-ends de aplicações"
+    },
+    {
+      "title": "nova anotacaoa criada",
+      "content": "anotacao nova na lista",
+      "id": 5,
+      "usersId": 1
+    },
+    {
+      "title": "anotacao atualizada",
+      "content": "anotacao atualizada",
+      "id": 6,
+      "usersId": 2
+    },
+    {
+      "id": 7,
+      "usersId": 3,
+      "title": "back-end. o que é?",
+      "content": "back-end é todo o conteudo hospedado em um servidor que faz comunicação com um banco de dados e retorna esse conteudo para o front-end,que é o cliente ou usuário"
+    },
+    {
+      "id": 8,
+      "usersId": 1,
+      "title": "front-end.O que é ?",
+      "content": "frotn-end é todo o conteudo visto na tela de uma aplicaçao.basicamente o front-end é contruido com html,css e Javascript que são rodados por debaixo dos panos."
+    },
+    {
+      "id": 9,
+      "usersId": 2,
+      "title": "uma anotação qualquer",
+      "content": "estou aprendendo que react é um framework da web para desnevolvimento de front-ends de aplicações"
+    },
+    {
+      "title": "nova anotacaoa criada",
+      "content": "anotacao nova na lista",
+      "id": 10,
+      "usersId": 1
+    },
+    {
+      "title": "anotacao atualizada",
+      "content": "anotacao atualizada",
+      "id": 11,
+      "usersId": 2
+    },
+    {
+      "id": 12,
+      "usersId": 3,
+      "title": "back-end. o que é?",
+      "content": "back-end é todo o conteudo hospedado em um servidor que faz comunicação com um banco de dados e retorna esse conteudo para o front-end,que é o cliente ou usuário"
+    },
+    {
+      "id": 13,
+      "usersId": 1,
+      "title": "front-end.O que é ?",
+      "content": "frotn-end é todo o conteudo visto na tela de uma aplicaçao.basicamente o front-end é contruido com html,css e Javascript que são rodados por debaixo dos panos."
+    },
+    {
+      "title": "nova anotacaoa criada",
+      "content": "anotacao nova na lista",
+      "id": 15,
+      "usersId": 1
+    },
+    {
+      "usersId": 2,
+      "title": "api organizada",
+      "content": "organizando aa api",
+      "id": 16
+    }
+  ]
+}

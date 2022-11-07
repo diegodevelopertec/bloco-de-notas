@@ -1,6 +1,4 @@
 
-
-
 export type ActionGeralType={
     type:string,
     payload:{

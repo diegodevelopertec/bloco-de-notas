@@ -2,10 +2,10 @@ import styled from 'styled-components'
 
 
 export const cardContainer=styled.div`
-    height:200px;
+    height:250px;
     width:300px;
     background-color: #0e082b;
-    padding:10px;
+    padding: 15px 10px;
     display:flex;
     flex-direction:column;
     margin: 5px;
@@ -64,7 +64,7 @@ export const cardContent=styled.div`
 export const ContainerActionsModal=styled.div`
 display:flex;
 justify-content: flex-end;
-margin-top: 12px;
+margin-top: 9px;
 margin-bottom: 12px;
 
 a{
@@ -72,20 +72,17 @@ a{
     background-color:#eee;
     margin-left:6px;
     margin-right:6px;
-     padding: 6px;
+     padding: 7px;
      border-radius: 5px;
-     box-shadow:2px 2px 0 #909091;
      transition:all ease .3s;
-
-
+   
      &:hover{
         background-color:#33cc52;
-        box-shadow: 2px 2px 0 #186b27;
          cursor: pointer;
      }
    img{
-    height: 20px;
-    width: 20px;
+    height:28px;
+    width: 28px;
    }
 }
 `

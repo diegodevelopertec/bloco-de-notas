@@ -1,15 +1,13 @@
 import { ChangeEvent, useContext, useEffect, useState } from 'react'
-import { Context } from '../../contexts/context'
-import { useNotes } from '../../hooks/itemlist'
 import S from './style.module.css'
+import {useNavigate} from 'react-router-dom'
 //import {Notes} from '../../data/notes'
-
+import {ApiActions} from '../../Api/api'
 
 
 //types
 type Props={
     activateOffModal:()=>void,
-   
 }
 
 
@@ -19,9 +17,9 @@ export const Modal=({activateOffModal}:Props)=>{
 const d=new Date()
 const [titleInput,setTitleInput]=useState('')
 const [contentInput,setNoteContentInput]=useState('')
-const [error,setError]=useState(false)
-const {state,dispatch}=useContext(Context)
 
+
+let navigate=useNavigate()
 
 
 
@@ -35,25 +33,18 @@ const formActions={
         setNoteContentInput(e.target.value)
     }
 }
-const addNote=()=>{
-
-    if(titleInput && contentInput){
-        dispatch({
-            type:'add',
-            payload:{
-                title:titleInput,
-                content:contentInput
-            }
-        })
-    activateOffModal()
-   }
+const addNote=async ()=>{
+   if(titleInput && contentInput){
+    let json=await ApiActions.addPostNote(titleInput,contentInput,2)
+     activateOffModal()}
     }
 
 
 
 return <>
         <div className={S.modalContainer}>
-            <div className={S.modalData}>
+        
+           <div className={S.modalData}>
                 <div className={S.dataTitle}>
                     <div className={S.title}>Titulo</div>
                   <div className={S.cxInput}>  <input  type="text" placeholder='Titulo da anotação' value={titleInput} onChange={formActions.titleContent} maxLength={19}  /></div>
@@ -65,8 +56,9 @@ return <>
             </div>
             <div className={S.modalButtons}>
                     <button onClick={activateOffModal} className={S.BtnCancel}>cancelar</button>
-                    <button onClick={addNote} className={S.BtnAdd}>salvar</button>
+                    <button onClick={addNote} type='submit' className={S.BtnAdd}>salvar</button>
             </div> 
+          
         </div>
 
 

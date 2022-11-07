@@ -2,14 +2,11 @@ import styled from "styled-components"
 
 
 export const Main=styled.main`
-display:flex;
-flex-wrap:wrap ;
-justify-content:center;
-overflow:none;
-min-height: 400px;
-width: 100vw;
-
-
+    display:flex;
+    flex-wrap:wrap ;
+    justify-content:center;
+    min-height: 100vh;
+    padding-bottom: 150px;
 @media screen and (max-width:920px){
     width:100vw;
    display: flex;
@@ -18,12 +15,16 @@ width: 100vw;
    min-height: 100vh;
 }
 `
-export const ListContainer=styled.div`
+type Prop={
+    opacityCondition:boolean
+}
+export const ListContainer=styled.div<Prop>`
 display:flex;
 justify-content:center;
 flex-wrap:wrap;
 margin-top:100px;
 overflow: hidden;
+opacity:${props=>props.opacityCondition ? '0.5' : '1'};
 
 
 
@@ -69,22 +70,21 @@ img{
 
 
 }
+
+
 `
+
+
 export const ContainerModal=styled.div`
-padding-top:5%;
-padding-bottom:2%;
-display:flex;
-justify-content:center;
-align-items:Center;
-margin-top:18%;
-overflow: none;
-width: 100vw;
-
-
-
-
-@media screen and (max-width:600px){
-padding:10px;
-
-}
+    position: fixed;
+    top:0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color:18, 18, 18;
+   
 `

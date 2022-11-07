@@ -120,16 +120,17 @@ h3{
        border: none;
        color: #eee;
        background-color:#139c4e ;
-    box-shadow: 5px 5px #127a3f ;
+       box-shadow: 5px 2px #127a3f ;
         border-radius:12px;
         transition: all ease .3s;
         
     }
     .link:hover{
         background-color:#15bc2c;
-    box-shadow: 5px 5px #137d21;
+   box-shadow: 2px 2px #137d21;
             cursor: pointer;
         }
+        
 
 
         

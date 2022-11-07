@@ -4,14 +4,15 @@
 .modalContainer{
     display: flex;
     flex-direction: column;
-    padding: 15px;
+    padding: 15px 10px;
     width: 600px;
     background-color: #0e082b;
     border-radius: 10px;
-    position: fixed;
-    top: 180px;
+   /*position: fixed;
+    //top: 180px;*/
     transition: all ease .4s;
     box-shadow: 0 0 13px rgb(130, 144, 209);
+    
    
 }
 
@@ -79,7 +80,7 @@
 .modalButtons{
     display: flex;
     margin-top: 12px;
-   
+ 
 }
 .modalButtons button{
     flex:1;

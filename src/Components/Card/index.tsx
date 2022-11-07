@@ -3,19 +3,19 @@ import { Link } from "react-router-dom"
 import * as S from './style'
 import ViewImage from '../../assets/images/view.png'
 import LixeiraImage from '../../assets/images/lixeira.png'
+import {ApiActions} from '../../Api/api'
 
 type Props ={
-    id?:string | boolean,
+    id?:any,
     title:string,
     content:string,
     data:string,
    clickDelete:()=>void,
-   clikedView:()=>void
+ 
   
 }
-export const Card=({title,content,data,clickDelete,clikedView}:Props)=>{
+export const Card=({title,content,data,clickDelete}:Props)=>{
 
-   
 
   
     return <>
@@ -28,7 +28,7 @@ export const Card=({title,content,data,clickDelete,clikedView}:Props)=>{
             <textarea disabled name="" id="" value={content}></textarea>
         </S.cardContent>
         <S.ContainerActionsModal>
-            <a className="link-view"  onClick={clikedView} ><img  src={ViewImage} alt="" /></a>
+            <a className="link-view"   ><img  src={ViewImage} alt="" /></a>
             <a className="link-lixeira"  onClick={clickDelete} ><img src={LixeiraImage} alt="" /></a>
             
         </S.ContainerActionsModal>
