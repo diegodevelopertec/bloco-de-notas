@@ -15,6 +15,9 @@ export const AllNotes=()=>{
   const [onModal,setOnModal]=useState(false)
   const [opacity,setOpacity]=useState(false)
   const [notes,setNotes]=useState<NotesTypes[]>([])
+  const [activeModalContainer,setActiveModalContainer]=useState(false)
+  const [dataModalEdit,setDataModalEdit]=useState<NotesTypes | any>()
+  const [visibleModalEdit,setVisibleModalEdit]=useState(false)
 
   //EFFECTS
  useEffect(()=>{
@@ -39,25 +42,28 @@ export const AllNotes=()=>{
   }
 
   const actionsModal={
-          openModal:()=>{
-                setOnModal(true)
-                setOpacity(true)
-
-              },
-          closeModal:()=>{
-                setOnModal(false)
-                setOpacity(false)
-              
-              }
-      
+          openModal:()=>{setActiveModalContainer(true,),setOnModal(true) , setOpacity(true) },
+          closeModal:()=>{setActiveModalContainer(false), setOnModal(false) , setOpacity(false)}
   }
+
+
+const returnDataModaledit=(data:NotesTypes)=>{
+  setDataModalEdit(data)
+  setVisibleModalEdit(true)
+  setActiveModalContainer(true)
+}
+
 
 return <>
     <S.Main id='list-container'>
           <S.ListContainer opacityCondition={opacity} className="list-card-container">
             {notes.length !== 0 ?   notes.map((item,index)=>(
                   <div key={index} >
-                      <Card clickDelete={()=>{deleteNote(item.id)}} info={item} />
+                      <Card 
+                        clickDelete={()=>{deleteNote(item.id)}} 
+                         info={item} 
+                         onClick={returnDataModaledit}
+                         />
                   </div>)) 
                     :
                     <S.ErrorMensage >
@@ -71,8 +77,9 @@ return <>
           </S.ListContainer>
           <BotaoFixo activateOnModal={actionsModal.openModal}/>
        </S.Main>
-       {onModal && <S.ContainerModal>
+       {activeModalContainer && <S.ContainerModal>
            { onModal && <Modal  activateOffModal={actionsModal.closeModal} />}
+           {visibleModalEdit && <CardItem data={dataModalEdit} />}
        </S.ContainerModal>}
      
       
