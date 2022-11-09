@@ -20,7 +20,7 @@ export const AllNotes=()=>{
  useEffect(()=>{
   loadNotes()
 
- })
+ },[])
     
  //Functions
   const deleteNote=async (id:number )=>{
