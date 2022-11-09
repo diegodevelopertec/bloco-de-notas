@@ -2,20 +2,45 @@ import * as S from './style'
 import LixeiraImage from '../../assets/images/lixeira.png'
 import EditImage from '../../assets/images/edit.png'
 import { NotesTypes } from '../../types/notesType'
+import {useState } from 'react'
+import {ApiActions} from './../../Api/api'
 
 
 type Props={
     data:NotesTypes
-   clikedDelete?:()=>void
-
+    closeCardItem:()=>void
 }
 
-export const CardItem=({data}:Props)=>{
+
+
+
+export const CardItem=({data,closeCardItem}:Props)=>{
+    const [inputDisbale,setInputDisable]=useState(true)
+
+    const deleteNote=async (id:number )=>{
+        try{
+          let json=await ApiActions.delNote(id)
+          closeCardItem()
+           return json
+         
+        }catch(e){
+          console.log(e);
+        return null
+        }
+    
+       
+    }
+
+
+
+
+
+
 
     return <>
     <S.cardContainer id={data.id.toString()} className="cardItem">
         <S.cardData>
-            <span><h3 id="title-card">{data.title}</h3></span>
+            <span><input disabled id="title-card" value={data.title}></input></span>
             <span><h3>{data.data}</h3></span>
         </S.cardData>
         <S.cardContent>
@@ -23,7 +48,7 @@ export const CardItem=({data}:Props)=>{
         </S.cardContent>
         <S.ContainerActionsModal>
             <button className="link-view"  ><img  src={EditImage} alt="" /></button>
-            <button className="link-lixeira"  ><img src={LixeiraImage}  alt="" /></button>
+            <button className="link-lixeira"   onClick={()=>deleteNote(data.id)} ><img src={LixeiraImage}  alt="" /></button>
             
         </S.ContainerActionsModal>
     </S.cardContainer>

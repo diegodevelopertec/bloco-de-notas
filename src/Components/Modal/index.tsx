@@ -26,18 +26,16 @@ let navigate=useNavigate()
 
 //functions
 const formActions={
-    titleContent:(e:ChangeEvent<HTMLInputElement>)=>{
-        setTitleInput(e.target.value)
-    },
-    noteContent:(e:ChangeEvent<HTMLTextAreaElement>)=>{
-        setNoteContentInput(e.target.value)
-    }
+    titleContent:(e:ChangeEvent<HTMLInputElement>)=>setTitleInput(e.target.value),
+    noteContent:(e:ChangeEvent<HTMLTextAreaElement>)=>setNoteContentInput(e.target.value)
+    
 }
 const addNote=async ()=>{
    if(titleInput && contentInput){
-    let json=await ApiActions.addPostNote(titleInput,contentInput,2)
-     activateOffModal()}
+      let json=await ApiActions.addPostNote(titleInput,contentInput,2)
+      activateOffModal()
     }
+ }
 
 
 

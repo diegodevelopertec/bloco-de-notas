@@ -18,12 +18,12 @@ export const AllNotes=()=>{
   const [activeModalContainer,setActiveModalContainer]=useState(false)
   const [dataModalEdit,setDataModalEdit]=useState<NotesTypes | any>()
   const [visibleModalEdit,setVisibleModalEdit]=useState(false)
-
+  
   //EFFECTS
  useEffect(()=>{
   loadNotes()
 
- },[])
+ },[notes])
     
  //Functions
   const deleteNote=async (id:number )=>{
@@ -47,12 +47,19 @@ export const AllNotes=()=>{
   }
 
 
-const returnDataModaledit=(data:NotesTypes)=>{
+const returnDataModalEdit=(data:NotesTypes)=>{
   setDataModalEdit(data)
+  setOpacity(true)
   setVisibleModalEdit(true)
   setActiveModalContainer(true)
+  
 }
 
+const removeModals=()=>{
+  setOpacity(false)
+  setVisibleModalEdit(false)
+  setActiveModalContainer(false)
+}
 
 return <>
     <S.Main id='list-container'>
@@ -62,7 +69,7 @@ return <>
                       <Card 
                         clickDelete={()=>{deleteNote(item.id)}} 
                          info={item} 
-                         onClick={returnDataModaledit}
+                         onClick={returnDataModalEdit}
                          />
                   </div>)) 
                     :
@@ -79,7 +86,7 @@ return <>
        </S.Main>
        {activeModalContainer && <S.ContainerModal>
            { onModal && <Modal  activateOffModal={actionsModal.closeModal} />}
-           {visibleModalEdit && <CardItem data={dataModalEdit} />}
+           {visibleModalEdit && <CardItem  closeCardItem={removeModals} data={dataModalEdit} />}
        </S.ContainerModal>}
      
       

@@ -9,11 +9,10 @@ export const cardContainer=styled.div`
     display:flex;
     flex-direction:column;
     margin: 5px;
-  
     border-radius:5px;
     color:#4bb3b1;
     transition: all ease .4s;
-
+    box-shadow: 0 0 15px #eee;
   
     :hover{
       background:#11192b;
@@ -33,16 +32,23 @@ export const cardData=styled.div`
     height:10px;
     margin-bottom:5px;
     font-size:10px;
+    padding: 15px 0;
 
     span{
-        text-align:center;
+        width: 100%;
+        input{
+         width: 100%;
+         padding: 5px ;
+     }
     }
+    
 `
 
 export const cardContent=styled.div`
     flex:1;
     margin-top:10px;
    
+
     textarea{
     width:100%;
     height: 250px;
@@ -66,7 +72,7 @@ justify-content: flex-end;
 margin-top: 12px;
 margin-bottom: 12px;
 
-a{
+button{
     text-decoration:none;
     background-color:#eee;
     margin-left:6px;
@@ -75,7 +81,7 @@ a{
      border-radius: 5px;
      box-shadow:2px 2px 0 #909091;
      transition:all ease .3s;
-
+    border: none;
 
      &:hover{
         background-color:#33cc52;
