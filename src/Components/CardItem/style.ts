@@ -21,10 +21,10 @@ export const cardContainer=styled.div`
       color:white;
     }
     @media screen and (max-width:600px){
-       
-       width:80vw;
-       margin:0;
-       margin-top:10px;
+        height: 100%;
+        margin: 0;
+        border-radius: 0;
+       padding-bottom: 25px;
     }
 `
 export const cardData=styled.div<Props>`
@@ -36,9 +36,9 @@ export const cardData=styled.div<Props>`
    
 
     .cx-btn-top{
-        margin: 15px 0;
+        margin: 15px 0px;
         button{
-                padding: 5px 10px;
+                padding: 5px 30px;
                 color: white;
                 background-color: red;
                 border: 0;
@@ -75,6 +75,9 @@ export const cardContent=styled.div<Props>`
     overflow:auto;
     transition: all ease 0.3s;
     text-align:start;
+    @media screen and (max-width:600px){
+       height:95%;
+    }
 
     }
     @media screen and (max-width:600px){
