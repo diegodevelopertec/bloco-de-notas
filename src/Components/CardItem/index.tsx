@@ -2,7 +2,7 @@ import * as S from './style'
 import LixeiraImage from '../../assets/images/lixeira.png'
 import EditImage from '../../assets/images/edit.png'
 import { NotesTypes } from '../../types/notesType'
-import {useState } from 'react'
+import {ChangeEvent, useEffect, useState } from 'react'
 import {ApiActions} from './../../Api/api'
 import {Navigate, useNavigate} from 'react-router-dom'
 
@@ -16,7 +16,18 @@ type Props={
 
 export const CardItem=({data,closeCardItem}:Props)=>{
     const [inputDisable,setInputDisable]=useState(true)
+    const [stateTitle,setStateTitle]=useState(data.title)
+    const [stateContent,setStateContent]=useState(data.content)
 
+
+
+const actionsForm={
+    getTitle:(e:ChangeEvent<HTMLInputElement>)=>setStateTitle(e.target.value),
+    getContent:(e:ChangeEvent<HTMLTextAreaElement>)=>setStateContent(e.target.value)
+}
+
+
+  
     const deleteNote=async (id:number )=>{
        let request=async ()=>{
             try{
@@ -34,12 +45,15 @@ export const CardItem=({data,closeCardItem}:Props)=>{
     }
 
 
-    const EditNote=()=>{
+  const EditNote=()=>{
         setInputDisable(false)
   }
 
-  const saveNote=()=>{
+  const saveNote=async()=>{
+    setInputDisable(false)
+    let res=await ApiActions.updateNote(stateTitle,stateContent,data.id.toString())
     setInputDisable(true)
+    closeCardItem()
   }
 
 
@@ -53,12 +67,26 @@ export const CardItem=({data,closeCardItem}:Props)=>{
                 <button onClick={closeCardItem}>sair</button>
             </div>
            <div>
-             <span><input disabled={inputDisable} id="title-card" value={data.title}></input></span>
+             <span>
+                <input disabled={inputDisable} 
+                   id="title-card" 
+                   defaultValue={data.title} 
+                   value={stateTitle} 
+                   onChange={actionsForm.getTitle}
+                 />
+             </span>
              <span><h3>{data.data}</h3></span>
            </div>
         </S.cardData>
         <S.cardContent stateInputs={inputDisable}>
-            <textarea  disabled={inputDisable} name="" id="" value={data.content}></textarea>
+            <textarea  
+               disabled={inputDisable} 
+               value={stateContent}
+               onChange={actionsForm.getContent}
+             >
+              {data.content}
+            
+            </textarea>
         </S.cardContent>
         <S.ContainerActionsModal >
             {inputDisable && <button className="link-view" onClick={EditNote}  ><img  src={EditImage} alt="" />Editar</button> || 

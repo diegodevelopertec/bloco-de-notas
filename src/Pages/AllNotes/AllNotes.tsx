@@ -1,4 +1,3 @@
-import React, { useContext } from "react"
 import { useState,useEffect } from "react"
 import { Card } from "../../Components/Card"
 import { Modal } from "../../Components/Modal"
@@ -8,7 +7,7 @@ import { CardItem } from "../../Components/CardItem"
 import errorImageIcons from '../../assets/images/error.png'
 import { NotesTypes } from "../../types/notesType"
 import {ApiActions} from '../../Api/api'
-import { LoginPage } from "../Login/login"
+
 
 export const AllNotes=()=>{
   //STATES

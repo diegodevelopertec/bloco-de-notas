@@ -48,10 +48,12 @@ export const cardContent=styled.div`
     height: 100%;
     resize:none;
     border-radius: 6px;
-    background-color: #16104a;
+   background-color: initial;
+   // background-color: #16104a;
     padding:10px;
     overflow:hidden;
     outline:0;
+    border: none;
 
     }
     @media screen and (max-width:600px){

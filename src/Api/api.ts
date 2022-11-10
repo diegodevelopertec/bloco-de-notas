@@ -9,15 +9,16 @@ export const ApiActions={
         },
         addPostNote:async(title:string,content:string,usersId:number)=>{
                     let response=await fetch(`${BASEURL}notes`,{
-                        method:'POST',
-                    body:JSON.stringify({
-                        usersId,
-                        title,
-                        content
-                    }),
-                    headers:{
-                        'Content-Type':'application/json'
-                    } })
+                                method:'POST',
+                            body:JSON.stringify({
+                                usersId,
+                                title,
+                                content
+                            }),
+                            headers:{
+                                'Content-Type':'application/json'
+                            } }
+                    )
 
                     let json=await response.json()
                     return json
@@ -31,5 +32,19 @@ export const ApiActions={
                 let json=await response.json()
                 return json
             }
-        }
+        },
+        updateNote:async(title:string,content:string,id:string)=>{
+            let response=await fetch(`${BASEURL}notes/${id}`,{
+                    method:'PUT',
+                    body:JSON.stringify({
+                        title,
+                        content
+                    }),
+                    headers:{ 'Content-Type':'application/json'} 
+                        }
+                )
+
+                let json=await response.json()
+                return json
+              }
 }
