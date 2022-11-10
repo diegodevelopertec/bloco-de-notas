@@ -4,7 +4,7 @@ import EditImage from '../../assets/images/edit.png'
 import { NotesTypes } from '../../types/notesType'
 import {useState } from 'react'
 import {ApiActions} from './../../Api/api'
-
+import {Navigate, useNavigate} from 'react-router-dom'
 
 type Props={
     data:NotesTypes
@@ -18,15 +18,18 @@ export const CardItem=({data,closeCardItem}:Props)=>{
     const [inputDisable,setInputDisable]=useState(true)
 
     const deleteNote=async (id:number )=>{
-        try{
-          let json=await ApiActions.delNote(id)
-           return json
-         
-        }catch(e){
-          console.log(e);
-        return null
-        }
-    
+       let request=async ()=>{
+            try{
+              let json=await ApiActions.delNote(id)
+              return json 
+            
+            }catch(e){
+              console.log(e);
+            return null
+            }
+       }
+       request()
+       closeCardItem()
        
     }
 

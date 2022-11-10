@@ -14,7 +14,7 @@ export const cardContainer=styled.div`
     margin: 5px;
     border-radius:5px;
     color:#4bb3b1;
-    transition: all ease .4s;
+    transition: all ease 0.4s;
     box-shadow: 0 0 15px #eee;
   
     :hover{
@@ -74,6 +74,7 @@ export const cardContent=styled.div<Props>`
     padding:10px;
     overflow:auto;
     transition: all ease 0.3s;
+    text-align:start;
 
     }
     @media screen and (max-width:600px){
