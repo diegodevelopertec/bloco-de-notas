@@ -84,13 +84,13 @@ return <>
           </S.ListContainer>
           <BotaoFixo activateOnModal={actionsModal.openModal}/>
        </S.Main>
-       {activeModalContainer && <S.ContainerModal>
+       {activeModalContainer && <S.ContainerModal >
            { onModal && <Modal  activateOffModal={actionsModal.closeModal} />}
-           {visibleModalEdit && <CardItem  closeCardItem={removeModals} data={dataModalEdit} />}
+           {visibleModalEdit ?  <CardItem  closeCardItem={removeModals} data={dataModalEdit} /> : null}
        </S.ContainerModal>}
      
       
-     
+    
     
     </>
 }

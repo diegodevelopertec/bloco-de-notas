@@ -8,11 +8,9 @@
     width: 600px;
     background-color: #0e082b;
     border-radius: 10px;
-   /*position: fixed;
-    //top: 180px;*/
     transition: all ease .4s;
     box-shadow: 0 0 13px rgb(130, 144, 209);
-    
+ 
    
 }
 

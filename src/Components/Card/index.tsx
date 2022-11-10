@@ -21,7 +21,7 @@ export const Card=({info,clickDelete,onClick}:Props)=>{
 
   
     return <>
-    <S.cardContainer onClick={clickReturnData} className="cardItem">
+    <S.cardContainer  className="cardItem">
         <S.cardData>
             <span><h3 id="title-card">{info.title}</h3></span>
             <span><h3>{info.data}</h3></span>
@@ -30,7 +30,7 @@ export const Card=({info,clickDelete,onClick}:Props)=>{
             <textarea disabled name="" id="" value={info.content}></textarea>
         </S.cardContent>
         <S.ContainerActionsModal>
-            <a className="link-view"   ><img  src={ViewImage} alt="" /></a>
+            <a className="link-view" onClick={clickReturnData}  ><img  src={ViewImage} alt="" /></a>
             <a className="link-lixeira"  onClick={clickDelete} ><img src={LixeiraImage} alt="" /></a>
             
         </S.ContainerActionsModal>

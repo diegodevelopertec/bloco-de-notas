@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 
+type Props={
+    stateInputs:boolean
+}
 
 export const cardContainer=styled.div`
 
@@ -15,7 +18,6 @@ export const cardContainer=styled.div`
     box-shadow: 0 0 15px #eee;
   
     :hover{
-      background:#11192b;
       color:white;
     }
     @media screen and (max-width:600px){
@@ -25,7 +27,7 @@ export const cardContainer=styled.div`
        margin-top:10px;
     }
 `
-export const cardData=styled.div`
+export const cardData=styled.div<Props>`
     display:flex;
     justify-content:space-between;
     align-items:center;
@@ -36,27 +38,32 @@ export const cardData=styled.div`
 
     span{
         width: 100%;
+        background-color: #16104a;
         input{
-         width: 100%;
-         padding: 5px ;
+            transition: all ease 0.3s;
+            width: 100%;
+            background-color:  ${props=>props.stateInputs ? '#16104a' : '#eeee'};
+            padding: 10px ;
+            border: none;
+            border-radius: 5px;
      }
     }
     
 `
 
-export const cardContent=styled.div`
+export const cardContent=styled.div<Props>`
     flex:1;
     margin-top:10px;
-   
 
     textarea{
     width:100%;
     height: 250px;
     resize:none;
     border-radius: 6px;
-    background-color: #16104a;
+    background-color: ${props=>props.stateInputs ? '#16104a' : '#eeee'};
     padding:10px;
     overflow:auto;
+    transition: all ease 0.3s;
 
     }
     @media screen and (max-width:600px){
@@ -75,13 +82,18 @@ margin-bottom: 12px;
 button{
     text-decoration:none;
     background-color:#eee;
-    margin-left:6px;
-    margin-right:6px;
+    margin:5px 6px;
+    text-align: center;
+    display: flex;
+    align-items: center;
      padding: 6px;
      border-radius: 5px;
-     box-shadow:2px 2px 0 #909091;
+     box-shadow:2px 2px 0 #13356b;
      transition:all ease .3s;
     border: none;
+    color: white;
+    background-color: #244882;
+
 
      &:hover{
         background-color:#33cc52;
@@ -91,6 +103,7 @@ button{
    img{
     height: 20px;
     width: 20px;
+    padding-right: 3px;
    }
 }
 `
