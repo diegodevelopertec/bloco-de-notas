@@ -22,6 +22,7 @@ export const Card=({info,clickDelete,onClick}:Props)=>{
   
     return <>
     <S.cardContainer  className="cardItem">
+      
         <S.cardData>
             <span><h3 id="title-card">{info.title}</h3></span>
             <span><h3>{info.data}</h3></span>

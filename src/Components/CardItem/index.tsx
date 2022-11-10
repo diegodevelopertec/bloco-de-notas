@@ -20,7 +20,6 @@ export const CardItem=({data,closeCardItem}:Props)=>{
     const deleteNote=async (id:number )=>{
         try{
           let json=await ApiActions.delNote(id)
-          closeCardItem()
            return json
          
         }catch(e){
@@ -34,8 +33,6 @@ export const CardItem=({data,closeCardItem}:Props)=>{
 
     const EditNote=()=>{
         setInputDisable(false)
-
-
   }
 
   const saveNote=()=>{
@@ -47,12 +44,18 @@ export const CardItem=({data,closeCardItem}:Props)=>{
 
     return <>
     <S.cardContainer id={data.id.toString()} className="cardItem">
+        
         <S.cardData stateInputs={inputDisable}>
-            <span><input disabled={inputDisable} id="title-card" value={data.title}></input></span>
-            <span><h3>{data.data}</h3></span>
+            <div className='cx-btn-top'>
+                <button onClick={closeCardItem}>sair</button>
+            </div>
+           <div>
+             <span><input disabled={inputDisable} id="title-card" value={data.title}></input></span>
+             <span><h3>{data.data}</h3></span>
+           </div>
         </S.cardData>
         <S.cardContent stateInputs={inputDisable}>
-            <textarea disabled={inputDisable} name="" id="" value={data.content}></textarea>
+            <textarea  disabled={inputDisable} name="" id="" value={data.content}></textarea>
         </S.cardContent>
         <S.ContainerActionsModal >
             {inputDisable && <button className="link-view" onClick={EditNote}  ><img  src={EditImage} alt="" />Editar</button> || 

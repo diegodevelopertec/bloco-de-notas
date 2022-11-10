@@ -28,14 +28,24 @@ export const cardContainer=styled.div`
     }
 `
 export const cardData=styled.div<Props>`
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    height:10px;
+    display:block;
+    flex-direction: column;
+    align-items:flex-end;
     margin-bottom:5px;
     font-size:10px;
-    padding: 15px 0;
+   
 
+    .cx-btn-top{
+        margin: 15px 0;
+        button{
+                padding: 5px 10px;
+                color: white;
+                background-color: red;
+                border: 0;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+    }
     span{
         width: 100%;
         background-color: #16104a;
