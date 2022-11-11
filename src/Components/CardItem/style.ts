@@ -17,6 +17,7 @@ export const cardContainer=styled.div`
     transition: all ease 0.4s;
     box-shadow: 0 0 15px #eee;
   
+    
     :hover{
       color:white;
     }
@@ -38,9 +39,9 @@ export const cardData=styled.div<Props>`
     .cx-btn-top{
         margin: 15px 0px;
         button{
-                padding: 5px 30px;
-                color: white;
-                background-color: red;
+                padding: 5px 10px;
+                color:red;
+                background-color: transparent;
                 border: 0;
                 border-radius: 5px;
                 cursor: pointer;
@@ -66,15 +67,16 @@ export const cardContent=styled.div<Props>`
     margin-top:10px;
 
     textarea{
-    width:100%;
-    height: 250px;
-    resize:none;
-    border-radius: 6px;
-    background-color: ${props=>props.stateInputs ? '#16104a' : '#eeee'};
-    padding:10px;
-    overflow:auto;
-    transition: all ease 0.3s;
-    text-align:start;
+        width:100%;
+        height: 250px;
+        resize:none;
+        border-radius: 6px;
+        background-color: ${props=>props.stateInputs ? '#16104a' : '#eeee'};
+        padding:10px;
+        overflow:none;
+        text-overflow: ellipsis;
+        transition: all ease 0.3s;
+   
     @media screen and (max-width:600px){
        height:95%;
     }

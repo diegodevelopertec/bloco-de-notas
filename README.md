@@ -6,5 +6,11 @@
     <li> ✔ Esse é um projeto em React com Typescript</li>
     <li> ✔ Esse projeto é um sistema de criação de anotações</li>
     <li> 👨‍💻 Esse projeto ainda está em Desenvolvimento </li>
-
 </ul>
+
+<h2>Como rodar a aplicação</h2>
+    <ul>
+        <li>rode esse comando para baixar as dependências do projeto : <strong> npm install </strong> </li>
+        <li>rode esse comando para rodar o front e o back-end fake da a aplicação:  <strong> npm run fb </strong> </li>
+
+    </Ul>

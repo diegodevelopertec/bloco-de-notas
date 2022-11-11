@@ -15,11 +15,13 @@ type Props={
 
 
 export const CardItem=({data,closeCardItem}:Props)=>{
+  
     const [inputDisable,setInputDisable]=useState(true)
     const [stateTitle,setStateTitle]=useState(data.title)
     const [stateContent,setStateContent]=useState(data.content)
 
 
+    
 
 const actionsForm={
     getTitle:(e:ChangeEvent<HTMLInputElement>)=>setStateTitle(e.target.value),
@@ -28,7 +30,7 @@ const actionsForm={
 
 
   
-    const deleteNote=async (id:number )=>{
+ const deleteNote=async (id:number )=>{
        let request=async ()=>{
             try{
               let json=await ApiActions.delNote(id)
@@ -42,18 +44,22 @@ const actionsForm={
        request()
        closeCardItem()
        
-    }
+}
 
+    useEffect(()=>{
+      deleteNote
+    })
 
-  const EditNote=()=>{
-        setInputDisable(false)
-  }
+  const EditNote=()=>setInputDisable(false)
+  
 
   const saveNote=async()=>{
     setInputDisable(false)
     let res=await ApiActions.updateNote(stateTitle,stateContent,data.id.toString())
     setInputDisable(true)
-    closeCardItem()
+    if(stateTitle !== data.title || stateContent !== data.content){
+        closeCardItem()
+    }
   }
 
 
@@ -64,13 +70,12 @@ const actionsForm={
         
         <S.cardData stateInputs={inputDisable}>
             <div className='cx-btn-top'>
-                <button onClick={closeCardItem}>sair</button>
+                <button onClick={closeCardItem}>voltar</button>
             </div>
            <div>
              <span>
                 <input disabled={inputDisable} 
                    id="title-card" 
-                   defaultValue={data.title} 
                    value={stateTitle} 
                    onChange={actionsForm.getTitle}
                  />
@@ -83,6 +88,7 @@ const actionsForm={
                disabled={inputDisable} 
                value={stateContent}
                onChange={actionsForm.getContent}
+               wrap='hard'
              >
               {data.content}
             

@@ -20,7 +20,7 @@ export const AllNotes=()=>{
   
   //EFFECTS
  useEffect(()=>{
-  loadNotes()
+ loadNotes()
 
  },[notes])
     
