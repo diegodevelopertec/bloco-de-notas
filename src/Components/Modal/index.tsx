@@ -25,11 +25,7 @@ let navigate=useNavigate()
 
 
 //functions
-const formActions={
-    titleContent:(e:ChangeEvent<HTMLInputElement>)=>setTitleInput(e.target.value),
-    noteContent:(e:ChangeEvent<HTMLTextAreaElement>)=>setNoteContentInput(e.target.value)
-    
-}
+
 const addNote=async ()=>{
    if(titleInput && contentInput){
       let json=await ApiActions.addPostNote(titleInput,contentInput,2)
@@ -45,11 +41,22 @@ return <>
            <div className={S.modalData}>
                 <div className={S.dataTitle}>
                     <div className={S.title}>Titulo</div>
-                  <div className={S.cxInput}>  <input  type="text" placeholder='Titulo da anotação' value={titleInput} onChange={formActions.titleContent} maxLength={19}  /></div>
+                  <div className={S.cxInput}> 
+                    <input  type="text" 
+                        placeholder='Titulo da anotação' 
+                        value={titleInput} 
+                        onChange={(e:ChangeEvent<HTMLInputElement>)=>setTitleInput(e.target.value)} 
+                        maxLength={19}
+                          />
+                    </div>
                 </div>
                 <div className={S.dataContent}>
                     <span>Anotação</span>
-                    <textarea name="" id="" placeholder='Digite algo...' value={contentInput} onChange={formActions.noteContent} ></textarea>
+                    <textarea name="" id="" 
+                        placeholder='Digite algo...' 
+                        value={contentInput} 
+                        onChange={(e:ChangeEvent<HTMLTextAreaElement>)=>setNoteContentInput(e.target.value)} 
+                    ></textarea>
                 </div>
             </div>
             <div className={S.modalButtons}>

@@ -21,12 +21,7 @@ export const CardItem=({data,closeCardItem}:Props)=>{
     const [stateContent,setStateContent]=useState(data.content)
 
 
-    
 
-const actionsForm={
-    getTitle:(e:ChangeEvent<HTMLInputElement>)=>setStateTitle(e.target.value),
-    getContent:(e:ChangeEvent<HTMLTextAreaElement>)=>setStateContent(e.target.value)
-}
 
 
   
@@ -77,7 +72,7 @@ const actionsForm={
                 <input disabled={inputDisable} 
                    id="title-card" 
                    value={stateTitle} 
-                   onChange={actionsForm.getTitle}
+                   onChange={(e:ChangeEvent<HTMLInputElement>)=>setStateTitle(e.target.value)}
                  />
              </span>
              <span><h3>{data.data}</h3></span>
@@ -87,7 +82,7 @@ const actionsForm={
             <textarea  
                disabled={inputDisable} 
                value={stateContent}
-               onChange={actionsForm.getContent}
+               onChange={(e:ChangeEvent<HTMLTextAreaElement>)=>setStateContent(e.target.value)}
                wrap='hard'
              >
               {data.content}
