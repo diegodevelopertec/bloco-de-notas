@@ -12,5 +12,4 @@
     <ul>
         <li>rode esse comando para baixar as dependências do projeto : <strong> npm install </strong> </li>
         <li>rode esse comando para rodar o front e o back-end fake da a aplicação:  <strong> npm run fb </strong> </li>
-
-    </Ul>
+    </uL>
