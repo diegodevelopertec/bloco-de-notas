@@ -1,37 +1,30 @@
-import { ChangeEvent, useContext, useEffect, useState } from 'react'
+import { ChangeEvent, useState } from 'react'
 import S from './style.module.css'
-import {useNavigate} from 'react-router-dom'
-//import {Notes} from '../../data/notes'
 import {ApiActions} from '../../Api/api'
 
 
-//types
-type Props={
-    activateOffModal:()=>void,
-}
+
+type Props={activateOffModal:()=>void}
 
 
 export const Modal=({activateOffModal}:Props)=>{
 
-//states
-const d=new Date()
-const [titleInput,setTitleInput]=useState('')
-const [contentInput,setNoteContentInput]=useState('')
-
-
-let navigate=useNavigate()
+    //states
+    const d=new Date()
+    const [titleInput,setTitleInput]=useState('')
+    const [contentInput,setNoteContentInput]=useState('')
 
 
 
+    //functions
 
-//functions
-
-const addNote=async ()=>{
-   if(titleInput && contentInput){
-      let json=await ApiActions.addPostNote(titleInput,contentInput,2)
-      activateOffModal()
+    const addNote=async ()=>{
+        if(titleInput && contentInput){
+            let json=await ApiActions.addPostNote(titleInput,contentInput,2)
+            activateOffModal()
+            
+        }
     }
- }
 
 
 
@@ -42,12 +35,12 @@ return <>
                 <div className={S.dataTitle}>
                     <div className={S.title}>Titulo</div>
                   <div className={S.cxInput}> 
-                    <input  type="text" 
-                        placeholder='Titulo da anotação' 
-                        value={titleInput} 
-                        onChange={(e:ChangeEvent<HTMLInputElement>)=>setTitleInput(e.target.value)} 
-                        maxLength={19}
-                          />
+                        <input  type="text" 
+                            placeholder='Titulo da anotação' 
+                            value={titleInput} 
+                            onChange={(e:ChangeEvent<HTMLInputElement>)=>setTitleInput(e.target.value)} 
+                            maxLength={19}
+                        />
                     </div>
                 </div>
                 <div className={S.dataContent}>
@@ -55,8 +48,8 @@ return <>
                     <textarea name="" id="" 
                         placeholder='Digite algo...' 
                         value={contentInput} 
-                        onChange={(e:ChangeEvent<HTMLTextAreaElement>)=>setNoteContentInput(e.target.value)} 
-                    ></textarea>
+                        onChange={(e:ChangeEvent<HTMLTextAreaElement>)=>setNoteContentInput(e.target.value)} >
+                    </textarea>
                 </div>
             </div>
             <div className={S.modalButtons}>

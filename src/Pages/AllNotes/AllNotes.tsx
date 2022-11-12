@@ -20,15 +20,14 @@ export const AllNotes=()=>{
   
   //EFFECTS
  useEffect(()=>{
- loadNotes()
-
- },[notes])
+    loadNotes()
+  },[notes])
     
  //Functions
   const deleteNote=async (id:number )=>{
       try{
-        let json=await ApiActions.delNote(id)
-         return json
+         let json=await ApiActions.delNote(id)
+          return json
       }catch(e){
       console.log(e);
       
@@ -66,10 +65,10 @@ return <>
             {notes.length !== 0 ?   notes.map((item,index)=>(
                   <div key={index} >
                       <Card 
-                        clickDelete={()=>{deleteNote(item.id)}} 
+                         clickDelete={()=>{deleteNote(item.id)}} 
                          info={item} 
                          onClick={returnDataModalEdit}
-                         />
+                      />
                   </div>)) 
                     :
                     <S.ErrorMensage >
@@ -87,9 +86,6 @@ return <>
            { onModal && <Modal  activateOffModal={actionsModal.closeModal} />}
            {visibleModalEdit ?  <CardItem  closeCardItem={removeModals} data={dataModalEdit} /> : null}
        </S.ContainerModal>}
-     
-      
-    
     
     </>
 }

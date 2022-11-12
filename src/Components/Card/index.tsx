@@ -3,7 +3,6 @@ import { Link } from "react-router-dom"
 import * as S from './style'
 import ViewImage from '../../assets/images/view.png'
 import LixeiraImage from '../../assets/images/lixeira.png'
-import {ApiActions} from '../../Api/api'
 import {NotesTypes} from '../../types/notesType'
 
 type Props ={
@@ -14,12 +13,12 @@ type Props ={
   
 }
 export const Card=({info,clickDelete,onClick}:Props)=>{
+   
+   
+const clickReturnData=()=>onClick(info)
+     
+    
 
-    const clickReturnData=()=>{
-        onClick(info)
-    }
-
-  
     return <>
     <S.cardContainer  className="cardItem">
       
