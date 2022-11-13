@@ -30,8 +30,8 @@ const clickReturnData=()=>onClick(info)
             <textarea disabled name="" id="" value={info.content}></textarea>
         </S.cardContent>
         <S.ContainerActionsModal>
-            <a className="link-view" onClick={clickReturnData}  ><img  src={ViewImage} alt="" /></a>
-            <a className="link-lixeira"  onClick={clickDelete} ><img src={LixeiraImage} alt="" /></a>
+            <a className="link-view" onClick={clickReturnData}  ><img  src={ViewImage} alt="" />ver</a>
+            <a className="link-lixeira"  onClick={clickDelete} ><img src={LixeiraImage} alt="" />excluir</a>
             
         </S.ContainerActionsModal>
     </S.cardContainer>

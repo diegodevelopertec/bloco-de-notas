@@ -7,6 +7,7 @@ export const Main=styled.main`
     justify-content:center;
     min-height: 100vh;
     padding-bottom: 150px;
+    
 @media screen and (max-width:920px){
     width:100vw;
    display: flex;

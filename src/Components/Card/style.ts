@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 
 export const cardContainer=styled.div`
-    height:250px;
+    height:270px;
     width:300px;
     background-color: #0e082b;
     padding: 15px 10px;
@@ -16,8 +16,11 @@ export const cardContainer=styled.div`
 
   
     :hover{
-      background:#11192b;
+      background:#222166;
       color:white;
+      textarea{
+        color: white;
+      }
     }
     @media screen and (max-width:600px){
        
@@ -58,7 +61,7 @@ export const cardContent=styled.div`
     }
     @media screen and (max-width:600px){
         overflow: none;
-       
+     
     }
 
 `
@@ -66,25 +69,30 @@ export const cardContent=styled.div`
 export const ContainerActionsModal=styled.div`
 display:flex;
 justify-content: flex-end;
-margin-top: 9px;
+margin-top: 35px;
 margin-bottom: 12px;
 
 a{
+    width: 90px;
+    display: flex;
     text-decoration:none;
-    background-color:#eee;
+    background-color:#dcdde6;
+    color: #191e59;
     margin-left:6px;
     margin-right:6px;
      padding: 7px;
      border-radius: 5px;
      transition:all ease .3s;
-   
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
      &:hover{
         background-color:#33cc52;
          cursor: pointer;
      }
    img{
-    height:28px;
-    width: 28px;
+    height:22px;
+    width: 22px;
    }
 }
 `

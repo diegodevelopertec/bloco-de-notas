@@ -40,11 +40,15 @@ export const cardData=styled.div<Props>`
         margin: 15px 0px;
         button{
                 padding: 5px 10px;
-                color:red;
+                color: white;
                 background-color: transparent;
                 border: 0;
                 border-radius: 5px;
                 cursor: pointer;
+                outline: 2px solid #eee;
+                &:hover{
+                    background-color: #16104a;
+                }
             }
     }
     span{
@@ -102,18 +106,17 @@ button{
     text-align: center;
     display: flex;
     align-items: center;
-     padding: 6px;
+     padding: 6px 10px;
      border-radius: 5px;
-     box-shadow:2px 2px 0 #13356b;
+    font-weight: bold;
      transition:all ease .3s;
     border: none;
-    color: white;
-    background-color: #244882;
-
+    color: #191e59;
+   
 
      &:hover{
         background-color:#33cc52;
-        box-shadow: 2px 2px 0 #186b27;
+       
          cursor: pointer;
      }
    img{
