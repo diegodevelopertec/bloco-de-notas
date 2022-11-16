@@ -22,7 +22,7 @@ export const LoginPage=()=>{
     return <>
         <S.Login>
         <S.ContainerForm>
-            <h3>Preencha com suas Informações</h3>
+            <h3>Login</h3>
             <form action="">
                 <div className='cx-form'>
                     <span><img src={emailIcon} alt="" /></span>

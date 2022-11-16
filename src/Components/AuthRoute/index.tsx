@@ -9,7 +9,7 @@ type Props={
 }
 export const AuthPrivate=({children}:Props)=>{
    
-   let token=true
+   let token=Cookies.get('token')
   
     if(!token){
       return  <Navigate to='/' />

@@ -4,55 +4,60 @@ import Cookies from "js-cookie";
 
 export const UserApi={
 
-
     loginUser:async(data:UserTypes)=>{
-        try{
-            let token
-            if(!token){
-            
-                let req=await fetch(`${BASEURL}`,{
+     
+            if(!data.token){
+                let token=Cookies.get('token')
+                if(token){
+                    data.token=token
+                }
+            }
+    
+            let req=await fetch(`${BASEURL}`,{
                     method:'POST',
                     body:JSON.stringify(data),
                     headers:{
                         'Content-Type':'application/json',
                         'Authorization':`Bearer ${Cookies.get('token')}`
                     }
-                })
-        
-            }
+           })
+           let res =await req.json()
 
-        }catch(e){
-            console.log(e);
-            
+        if(res.notallowed){
+                window.location.href='/'
+                return 
         }
+
+            return res
+    
 
 
 
     },
     registerUser:async(data:UserTypes)=>{
-        try{
-            let token
-            if(!token){
+      
+                if(!data.token){
+                    let token=Cookies.get('token')
+                    if(token){
+                        data.token=token
+                    }
+                }
             
                 let req=await fetch(`${BASEURL}`,{
                     method:'POST',
                     body:JSON.stringify(data),
                     headers:{
                         'Content-Type':'application/json',
-                        'Authorization':`Bearer ${Cookies.get('token')}`
+                        
                     }
                     
                 })
 
                 let res=await req.json()
-                   token=res.acessToken
+                 return res
         
-            }
-
-        }catch(e){
-            console.log(e);
             
-        }
+
 
 
 

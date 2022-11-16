@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const RegisterContainer=styled.div`
-min-height: 100vh;
-overflow:auto;
-display: flex;
-justify-content: center;
-align-items: center;
+    min-height: 100vh;
+    overflow:auto;
+    display: flex;
+    justify-content: center;
+   padding-top: 100px;
 
 `
 
@@ -15,10 +15,10 @@ width: 600px;
 height: max-content;
 background-color: #0e082b;
 border-radius: 12px;
-padding: 0px 15px;
+padding: 20px 15px;
 display: flex;
 flex-direction: column;
-
+box-shadow: 0 0 10px  #421ab0;
 
 
 h3{
@@ -29,7 +29,7 @@ h3{
 
 .cx-form-register{
    display: flex;
-   margin-top: 12px;
+   margin-top: 15px;
     
    
    span{
@@ -39,7 +39,7 @@ h3{
        min-width: 60px;
         text-align: center;
         padding: 10px;
-        background-color: #aaa;
+        background-color: #421ab0;;
         border-top-left-radius:6px;
        border-bottom-left-radius:6px;
         img{
@@ -49,11 +49,16 @@ h3{
     }
     input{
         font-size:18px;
-        padding: 15px;
+        padding: 12px;
        border: none;
         width: 100%;
         border-top-right-radius:6px;
       border-bottom-right-radius:6px;
+      background-color: #222124;
+      color: #421ab0;
+      &:focus{
+        outline:  2px solid #421ab0;
+      }
     }
 }
 
@@ -74,16 +79,17 @@ h3{
         align-items: center;
         text-decoration: none;
         color: white;
-        padding: 20px 15px;
+        padding: 17px 15px;
         width: 50%;
        border-radius: 5px;
        transition: all ease .4s;
        margin-bottom:15px;
-
+      
        &:hover{
         background-color:#15bc2c;
         
        }
+       
     }
 }
 @media screen and (max-width:800px) {

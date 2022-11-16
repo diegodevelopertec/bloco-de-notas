@@ -27,7 +27,7 @@ height:max-content;
 background-color: #0e082b;
 border-radius: 10px;
 color: #eee;
-
+box-shadow: 0 0 10px  #421ab0;
 
 
 @media screen and (max-width:800px){
@@ -76,7 +76,7 @@ h3{
     align-items:center;
        text-align: center;
         padding:10px;
-      background-color: #eee;
+        background-color: #421ab0;
       color:#03324a ;
       border-top-left-radius:6px;
       border-bottom-left-radius:6px;
@@ -93,6 +93,11 @@ h3{
        padding: 15px;
        width: 100%;
        border: none;
+       background-color: #222124;
+       color: #421ab0;
+       &:focus{
+        outline:  2px solid #421ab0;
+      }
     }
 
 }
