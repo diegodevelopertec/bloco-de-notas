@@ -35,12 +35,7 @@ export const ContainerContent=styled.div`
 
 `
 
-export const ContainerProfile=styled.div`
-padding:20px  100px;
-color: #0e082b;
-font-size: 20px;
 
-`
 
 
 

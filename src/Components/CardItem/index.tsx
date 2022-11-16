@@ -3,7 +3,7 @@ import LixeiraImage from '../../assets/images/lixeira.png'
 import EditImage from '../../assets/images/edit.png'
 import { NotesTypes } from '../../types/notesType'
 import {ChangeEvent, useEffect, useState } from 'react'
-import {ApiActions} from './../../Api/api'
+import {ApiActions} from '../../Api/notes'
 import {Navigate, useNavigate} from 'react-router-dom'
 
 type Props={

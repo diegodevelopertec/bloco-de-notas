@@ -1,26 +1,24 @@
 import styled from "styled-components";
 
 export const RegisterContainer=styled.div`
-height:100vh;
-padding: 15px;
+min-height: 100vh;
 overflow:auto;
 display: flex;
 justify-content: center;
-
+align-items: center;
 
 `
 
 
 export const FormRegister=styled.div`
-margin-top: 130px;
 width: 600px;
-height: 350px;
+height: max-content;
 background-color: #0e082b;
 border-radius: 12px;
-padding: 10px;
+padding: 0px 15px;
 display: flex;
 flex-direction: column;
-box-shadow: 0px 0px 5px #3d5a8a;
+
 
 
 h3{
@@ -50,7 +48,6 @@ h3{
         }
     }
     input{
-        color:#b1b3b5;
         font-size:18px;
         padding: 15px;
        border: none;
@@ -66,27 +63,26 @@ h3{
     justify-content: center;
    align-items: center;
    margin-top: 26px;
-   margin-bottom:50px;
+  
    
     
 
     a{
         background-color:#139c4e ;
-    box-shadow: 5px 5px #127a3f ;
         display: flex;
         justify-content: center;
         align-items: center;
         text-decoration: none;
         color: white;
-        padding: 10px 15px;
+        padding: 20px 15px;
         width: 50%;
-       border-radius: 12px;
+       border-radius: 5px;
        transition: all ease .4s;
        margin-bottom:15px;
 
        &:hover{
         background-color:#15bc2c;
-        box-shadow: 5px 5px #137d21;;
+        
        }
     }
 }

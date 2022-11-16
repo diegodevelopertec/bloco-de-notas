@@ -6,8 +6,8 @@ import * as S from './styled'
 import { CardItem } from "../../Components/CardItem"
 import errorImageIcons from '../../assets/images/error.png'
 import { NotesTypes } from "../../types/notesType"
-import {ApiActions} from '../../Api/api'
-
+import {ApiActions} from '../../Api/notes'
+import Loading from "../../Components/Loading"
 
 export const AllNotes=()=>{
   //STATES
@@ -18,10 +18,20 @@ export const AllNotes=()=>{
   const [dataModalEdit,setDataModalEdit]=useState<NotesTypes | any>()
   const [visibleModalEdit,setVisibleModalEdit]=useState(false)
   
+
   //EFFECTS
+
+
  useEffect(()=>{
-    loadNotes()
-  },[notes])
+  
+  const   loadNotes=async()=>{
+      let json=await ApiActions.getAllNotes()
+       setNotes(json)
+       
+      }
+  loadNotes()
+     
+  },[])
     
  //Functions
   const deleteNote=async (id:number )=>{
@@ -29,15 +39,11 @@ export const AllNotes=()=>{
          let json=await ApiActions.delNote(id)
           return json
       }catch(e){
-      console.log(e);
-      
+        console.log(e);
       }
+  
   }
 
-  const loadNotes=async()=>{
-    let json=await ApiActions.getAllNotes()
-    setNotes(json)
-  }
 
   const actionsModal={
           openModal:()=>{setActiveModalContainer(true,),setOnModal(true) , setOpacity(true) },
@@ -45,25 +51,31 @@ export const AllNotes=()=>{
   }
 
 
-const returnDataModalEdit=(data:NotesTypes)=>{
-  setDataModalEdit(data)
-  setOpacity(true)
-  setVisibleModalEdit(true)
-  setActiveModalContainer(true)
-  
-}
+  const returnDataModalEdit=(data:NotesTypes)=>{
+    setDataModalEdit(data)
+    setOpacity(true)
+    setVisibleModalEdit(true)
+    setActiveModalContainer(true)
+   
+  }
 
-const removeModals=()=>{
-  setOpacity(false)
-  setVisibleModalEdit(false)
-  setActiveModalContainer(false)
-}
+  const removeModals=()=>{
+    setOpacity(false)
+    setVisibleModalEdit(false)
+    setActiveModalContainer(false)
+   
+  }
 
 return <>
     <S.Main id='list-container'>
-          <S.ListContainer opacityCondition={opacity} className="list-card-container">
-            {notes.length !== 0 ?   notes.map((item,index)=>(
-                  <div key={index} >
+   
+      
+          <S.ListContainer listLength={notes.length} opacityCondition={opacity} className="list-card-container">
+            
+            {notes.length !== 0 ?  
+              
+            notes.map((item,index)=>(
+                  <div key={index}  >
                       <Card 
                          clickDelete={()=>{deleteNote(item.id)}} 
                          info={item} 
@@ -78,9 +90,9 @@ return <>
                      </S.ErrorMensage>
             }
           
-            
-          </S.ListContainer>
           <BotaoFixo activateOnModal={actionsModal.openModal}/>
+          </S.ListContainer>
+       
        </S.Main>
        {activeModalContainer && <S.ContainerModal >
            { onModal && <Modal  activateOffModal={actionsModal.closeModal} />}

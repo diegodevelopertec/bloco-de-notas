@@ -17,9 +17,6 @@ return <>
   <Router>
   <S.Container>
     <S.Header>WordBlock </S.Header>
-    <S.ContainerProfile>
-      <div>Bem vindo Diego</div>
-    </S.ContainerProfile>
       <S.ContainerContent>
         <Routes>
            <Route path='/register' element={<Register/>} />

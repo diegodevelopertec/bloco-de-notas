@@ -1,14 +1,15 @@
 import { ChangeEvent, useState } from 'react'
 import S from './style.module.css'
-import {ApiActions} from '../../Api/api'
-
+import {ApiActions} from '../../Api/notes'
+import {useNavigate} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 type Props={activateOffModal:()=>void}
 
 
 export const Modal=({activateOffModal}:Props)=>{
-
+    const navigate=useNavigate()
     //states
     const d=new Date()
     const [titleInput,setTitleInput]=useState('')
@@ -22,8 +23,11 @@ export const Modal=({activateOffModal}:Props)=>{
         if(titleInput && contentInput){
             let json=await ApiActions.addPostNote(titleInput,contentInput,2)
             activateOffModal()
-            
+          navigate('/notes')
+        }else{
+            alert('Todos os campos devem ser preenchidos')
         }
+        
     }
 
 
@@ -54,7 +58,7 @@ return <>
             </div>
             <div className={S.modalButtons}>
                     <button onClick={activateOffModal} className={S.BtnCancel}>cancelar</button>
-                    <button onClick={addNote} type='submit' className={S.BtnAdd}>salvar</button>
+                   <button  onClick={addNote} type='submit' className={S.BtnAdd}>salvar</button>
             </div> 
           
         </div>

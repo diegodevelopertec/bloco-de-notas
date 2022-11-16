@@ -17,22 +17,26 @@ export const Main=styled.main`
 }
 `
 type Prop={
-    opacityCondition:boolean
+    opacityCondition:boolean,
+   listLength:number
 }
 export const ListContainer=styled.div<Prop>`
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
+display: flex;
 margin-top:100px;
+flex-wrap: wrap;
 overflow: hidden;
+justify-content: center;
+width: 95vw;
 opacity:${props=>props.opacityCondition ? '0.5' : '1'};
-
-
+justify-content: ${props=>(props.listLength >= 1) && (props.listLength > 0)  ?  'flex-start' : null};
+padding: 0 5%;
 
 
 @media screen and (max-width:700px){
     margin-top:20px;
     align-items:center;
+    padding: 0%;
+    justify-content: center;
   
 }
 
@@ -88,4 +92,17 @@ export const ContainerModal=styled.div`
     height: 100%;
     background-color:18, 18, 18;
    
+`
+export const ContainerProfile=styled.div`
+padding:20px  100px;
+margin-bottom:  38px  ;
+width: 80vw;
+color: #aaa;
+border-radius: 5px;
+background-color: #0e082b;
+font-size: 20px;
+div{
+    display: flex;
+   justify-content: flex-start;
+}
 `

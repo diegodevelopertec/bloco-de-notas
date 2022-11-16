@@ -1,5 +1,5 @@
 
-let BASEURL='http://localhost:3000/'
+export let BASEURL='http://localhost:3000/'
 
 export const ApiActions={
         getAllNotes: async ()=>{

@@ -12,23 +12,11 @@ import passwordIcon from '../../assets/images/password.svg'
 
 export const LoginPage=()=>{
 
+    const [emailInput,setEmailInput]=useState('')
+    const [passwordInput,setPasswordInput]=useState('')
 
 
 
-const [emailInput,setEmailInput]=useState('')
-const [passwordInput,setPasswordInput]=useState('')
-
-
-
-
-const formActions={
-
-   
-    funcEmailInput:(e:ChangeEvent<HTMLInputElement>)=>setEmailInput(e.target.value),
-    funcPassInput:(e:ChangeEvent<HTMLInputElement>)=>setPasswordInput(e.target.value)
-    
-
-}
 
 
     return <>
@@ -38,19 +26,25 @@ const formActions={
             <form action="">
                 <div className='cx-form'>
                     <span><img src={emailIcon} alt="" /></span>
-                    <input type="email" name="" id="" value={emailInput}  onChange={formActions.funcEmailInput}/>
+                    <input type="email"  
+                       value={emailInput}  
+                       onChange={(e:ChangeEvent<HTMLInputElement>)=>setEmailInput(e.target.value)}
+                    />
                 </div>
 
                 <div className='cx-form'>
                     <span><img src={passwordIcon} alt="" /></span>
-                    <input type="password" name="" id="" value={passwordInput}  onChange={formActions.funcPassInput} />
+                    <input type="password" 
+                       value={passwordInput}  
+                       onChange={(e:ChangeEvent<HTMLInputElement>)=>setPasswordInput(e.target.value)} 
+                    />
                 </div>
 
                 <div className="cx-button">
-                     <Link to='/notes' className='link'>Entrar</Link>
+                     <Link  to='/notes' onClick={()=>null} className='link'>Entrar</Link>
                 </div>
                 <div className="link-register">
-                        <Link  to={'/register'}>cadastrar</Link>
+                  <p>Nao tem registro ? <Link to='/register'>clique aqui</Link></p>
                 </div>
             </form>
 
