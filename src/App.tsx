@@ -5,7 +5,7 @@ import { AuthPrivate } from './Components/AuthRoute'
 import { AllNotes } from './Pages/AllNotes/AllNotes'
 import { LoginPage } from './Pages/Login/login'
 import { Register } from './Pages/Register'
-
+import { AuthProvider } from './Contexts/Auth/AuthProvider'
 
 const App=()=>{ 
  
@@ -14,6 +14,7 @@ const App=()=>{
 
 
 return <>
+  
   <Router>
   <S.Container>
     <S.Header>WordBlock </S.Header>
@@ -28,6 +29,7 @@ return <>
   </S.Container>
  
   </Router>
+ 
  </>
 
 

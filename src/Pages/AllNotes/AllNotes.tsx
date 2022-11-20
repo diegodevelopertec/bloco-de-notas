@@ -20,8 +20,6 @@ export const AllNotes=()=>{
   
 
   //EFFECTS
-
-
  useEffect(()=>{
   
   const   loadNotes=async()=>{
@@ -29,7 +27,7 @@ export const AllNotes=()=>{
        setNotes(json)
        
       }
-  loadNotes()
+ setInterval(()=> loadNotes(),100)
      
   },[])
     

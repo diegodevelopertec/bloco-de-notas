@@ -1,18 +1,19 @@
 import { ReactNode } from "react"
 import {Navigate} from 'react-router-dom'
 import Cookies from 'js-cookie'
-
-
+import {ContextAuth} from '../../Contexts/Auth/AuthContext'
+import {useContext} from 'react'
 
 type Props={
    children:JSX.Element
 }
 export const AuthPrivate=({children}:Props)=>{
-   
-   let token=Cookies.get('token')
+
   
-    if(!token){
-      return  <Navigate to='/' />
-    }
+  if(!true){
+    return  <Navigate to='/'/>
+   }
+
    return children
+
 }

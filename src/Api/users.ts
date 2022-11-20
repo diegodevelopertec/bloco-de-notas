@@ -2,71 +2,61 @@ import { UserTypes } from "../types/userType"
 import { BASEURL } from "./notes";
 import Cookies from "js-cookie";
 
+
 export const UserApi={
+    Login:async (email:string,password:string)=>{
 
-    loginUser:async(data:UserTypes)=>{
-     
-            if(!data.token){
-                let token=Cookies.get('token')
-                if(token){
-                    data.token=token
-                }
+        let token=Cookies.get('token')
+        let req=await fetch(`${BASEURL}/users`,
+        {
+            method:'POST',
+            body:JSON.stringify({email,password}),
+            headers:{
+                'Content-Type':'applocation/json',
+                'Authorization':`Bearer ${token}`
             }
-    
-            let req=await fetch(`${BASEURL}`,{
-                    method:'POST',
-                    body:JSON.stringify(data),
-                    headers:{
-                        'Content-Type':'application/json',
-                        'Authorization':`Bearer ${Cookies.get('token')}`
-                    }
-           })
-           let res =await req.json()
+        })
+        let res=await req.json()
+       
+        console.log(res);
+      
+        return true
 
-        if(res.notallowed){
-                window.location.href='/'
-                return 
-        }
 
-            return res
-    
 
 
 
     },
-    registerUser:async(data:UserTypes)=>{
-      
-                if(!data.token){
-                    let token=Cookies.get('token')
-                    if(token){
-                        data.token=token
-                    }
-                }
-            
-                let req=await fetch(`${BASEURL}`,{
+    registro:async (name:string,email:string,password:string):Promise<boolean>=>{
+            try{
+                
+                let req=await fetch(`${BASEURL}users`,
+                {
                     method:'POST',
-                    body:JSON.stringify(data),
+                    body:JSON.stringify({name:name,email:email,password:password}),
                     headers:{
-                        'Content-Type':'application/json',
-                        
-                    }
+                        'Content-Type':'applocation/json',
                     
+                    }
                 })
-
                 let res=await req.json()
-                 return res
-        
-            
-
-
-
-
+                let token:string=res.accessToken
+                let user=Cookies.set('user',JSON.stringify({name,email,password}))
+                console.log(token);
+                console.log(user);
+                console.log(res);
+                return true
+            }catch(e){
+             
+                console.log(e);
+                return false
+              
+            }
 
 
 
 
 
     }
-
-
+   
 }

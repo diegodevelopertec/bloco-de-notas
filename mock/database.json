@@ -7,29 +7,33 @@
       "password": "teste123"
     },
     {
-      "email": "caio@gmail.com",
-      "password": "$2a$10$HmRJjY0Fdl9ibsmKcYQ8Jev2KDK.iju.El/sdvM6K3DJcoHOHvczW",
-      "name": "caio",
+      "email": "andrevdev@gamil.com",
+      "password": "$2a$10$/BAouWDy0FSdjuxI0EEd2.fHf.F/Ys4hl71U5DcPLlmbtv8wuByrO",
+      "name": "andre",
       "id": 2
     },
     {
-      "email": "diego@gmail.com",
-      "password": "$2a$10$WIOuodySJn8n8ju60XAv6.7uIBsFXllHM.OPu6h3/2QkW49vnz4ji",
-      "name": "Diego",
+      "email": "jonasdev@gmail.com",
+      "password": "$2a$10$U4UzHUyvRt2nYGqfL5q0AOv.kB1VsV4qdLH5Wbsbe3q5OdgBuiCMS",
+      "name": "jonas",
       "id": 3
-    },
-    {
-      "email": "diegom@gmail.com",
-      "password": "$2a$10$Pf5rUMRDldl5DCcKUFNbqOdpBR.rn/AHFF9EXHnJnQnoB5xVEhbz6",
-      "name": "DiegoM",
-      "id": 4
     }
   ],
   "notes": [
     {
       "title": "React.O que é ?",
-      "content": "React é uma bibliotecaa bseada no Javascript criado pela comunidade do facebook para criar interfaces mais bonitas.React pos de ser trabalhado com Typescript, o que traz maior produtividade no ambiente de trabalho de uma aplicaçãofffrr",
+      "content": "React é uma biblioteca baseada no Javascript criado pela comunidade do facebook para criar interfaces mais bonitas.React pos de ser trabalhado com Typescript, o que traz maior produtividade no ambiente de trabalho de uma aplicação",
       "id": 1
+    },
+    {
+      "title": "Node",
+      "content": "Node  euma runtime do javascript,ou seja, e uma maquina que interpreta o javascript no back-end de uma aplicaçao",
+      "id": 2
+    },
+    {
+      "title": "Angular JS",
+      "content": "Angular e um frameworl utilizado para criar interfaces front-ends.O Angular e baseado em typescript e uso bastante o conceito de OOP e por isso  emuito usado com Java.Angular e o principal rival do React",
+      "id": 3
     }
   ]
 }
