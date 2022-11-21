@@ -6,7 +6,7 @@ import passwordIcon from '../../assets/images/password.svg'
 import { UserApi } from '../../Api/users'
 import { useContext } from 'react'
 import { ContextAuth } from '../../Contexts/Auth/AuthContext'
-
+import NoteImage from './../../assets/images/noteApp.png'
 
 
 
@@ -24,6 +24,7 @@ export const LoginPage=()=>{
 
     return <>
         <S.Login>
+        
         <S.ContainerForm>
             <h3>Login</h3>
             <form action="">
@@ -55,6 +56,9 @@ export const LoginPage=()=>{
 
 
         </S.ContainerForm>
+        <S.ContainerImage>
+            <img src={NoteImage} alt="" />
+        </S.ContainerImage>
         </S.Login>
     
     </>

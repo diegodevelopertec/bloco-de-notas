@@ -6,9 +6,13 @@ export const Login=styled.div`
     justify-content: center;
     margin-top: 90px;
 
-    @media screen  and (max-width:920px){
+    @media screen  and (max-width:912px){
         height:100vh;
         width:100vw;
+      
+    flex-direction: column;
+    align-items: center;
+
     }
 
 
@@ -133,6 +137,18 @@ h3{
       text-align: center;
       font-size: 15px;
     }
+}
+
+`
+
+export const ContainerImage=styled.div`
+height: 100%;
+display: flex;
+justify-content: center;
+img{
+    height: 400px;
+    width: 90%;
+  
 }
 
 `

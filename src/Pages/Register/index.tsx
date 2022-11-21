@@ -8,7 +8,7 @@ import { UserApi } from '../../Api/users'
 import { Navigate } from 'react-router-dom'
 import { useContext } from 'react'
 import { ContextAuth } from '../../Contexts/Auth/AuthContext'
-
+import NoteImage from './../../assets/images/noteApp.png'
 
 
 export const Register=()=>{
@@ -64,6 +64,9 @@ const registerUser=async()=>{
 
 
         </S.FormRegister>
+        <S.ContainerImage>
+            <img src={NoteImage} alt="" />
+        </S.ContainerImage>
     </S.RegisterContainer>
     
 

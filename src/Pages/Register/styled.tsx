@@ -7,6 +7,10 @@ export const RegisterContainer=styled.div`
     justify-content: center;
    padding-top: 100px;
 
+@media screen and (max-width:912px) {
+    flex-direction: column;
+    align-items: center;
+}
 `
 
 
@@ -96,4 +100,19 @@ export const FormRegister=styled.div`
 }
 
 
+`
+export const ContainerImage=styled.div`
+height: 100%;
+display: flex;
+justify-content: center;
+img{
+    height: 400px;
+    width: 90%;
+  
+}
+
+
+@media screen and (max-width:800px) {
+
+}
 `
