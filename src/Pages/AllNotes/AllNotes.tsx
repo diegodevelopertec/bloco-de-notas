@@ -20,16 +20,18 @@ export const AllNotes=()=>{
   
 
   //EFFECTS
- useEffect(()=>{
-  
   const   loadNotes=async()=>{
-      let json=await ApiActions.getAllNotes()
-       setNotes(json)
-       
-      }
- setInterval(()=> loadNotes(),100)
+    let json=await ApiActions.getAllNotes()
+     setNotes(json)
      
+    }
+
+  useEffect(()=>{
+    setInterval(()=>loadNotes() , 1000)
   },[])
+  
+
+
     
  //Functions
   const deleteNote=async (id:number )=>{
@@ -71,9 +73,10 @@ return <>
           <S.ListContainer listLength={notes.length} opacityCondition={opacity} className="list-card-container">
             
             {notes.length !== 0 ?  
+              notes.map((item,index)=>(
               
-            notes.map((item,index)=>(
                   <div key={index}  >
+                
                       <Card 
                          clickDelete={()=>{deleteNote(item.id)}} 
                          info={item} 

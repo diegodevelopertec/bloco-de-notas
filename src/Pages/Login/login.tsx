@@ -5,7 +5,6 @@ import emailIcon from '../../assets/images/email.svg'
 import passwordIcon from '../../assets/images/password.svg'
 import { UserApi } from '../../Api/users'
 import { useContext } from 'react'
-import { ContextAuth } from '../../Contexts/Auth/AuthContext'
 import NoteImage from './../../assets/images/noteApp.png'
 
 
@@ -14,7 +13,7 @@ export const LoginPage=()=>{
 
     const [emailInput,setEmailInput]=useState('')
     const [passwordInput,setPasswordInput]=useState('')
-    const AuthApi=useContext(ContextAuth)
+
 
 
     const userLogin=async()=>{

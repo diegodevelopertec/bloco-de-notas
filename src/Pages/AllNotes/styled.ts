@@ -30,14 +30,19 @@ width: 95vw;
 opacity:${props=>props.opacityCondition ? '0.5' : '1'};
 justify-content: ${props=>(props.listLength >= 1) && (props.listLength > 0)  ?  'flex-start' : null};
 padding: 0 5%;
-
+flex-wrap:wrap;
+display: grid;
+grid-template-columns:repeat(4,1fr);
 
 @media screen and (max-width:700px){
     margin-top:20px;
+    margin: 0 10px;
+    width:100vw;
     align-items:center;
     padding: 0%;
     justify-content: center;
-  
+    grid-template-columns:repeat(2,1fr);
+    gap:7px;
 }
 
 

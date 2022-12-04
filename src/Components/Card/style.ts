@@ -3,19 +3,15 @@ import styled from 'styled-components'
 
 export const cardContainer=styled.div`
     height:270px;
-    width:300px;
     background-color: #0e082b;
     padding: 15px 10px;
     display:flex;
     flex-direction:column;
     margin: 5px;
-  
     border-radius:5px;
     color:#4bb3b1;
     transition: all ease .4s;
-
-  
-    :hover{
+    &:hover{
       background:#222166;
       color:white;
       textarea{
@@ -24,7 +20,7 @@ export const cardContainer=styled.div`
     }
     @media screen and (max-width:600px){
        
-       width:80vw;
+       width:auto;
        margin:0;
        margin-top:10px;
     }
@@ -36,6 +32,7 @@ export const cardData=styled.div`
     height:10px;
     margin-bottom:5px;
     font-size:10px;
+    width: 100%;
 
     span{
         text-align:center;
@@ -45,35 +42,34 @@ export const cardData=styled.div`
 export const cardContent=styled.div`
     flex:1;
     margin-top:10px;
-   
+ 
     textarea{
-    width:100%;
     height: 100%;
+    width: 100%;
     resize:none;
     border-radius: 6px;
-   background-color: initial;
+    background-color: initial;
    // background-color: #16104a;
     padding:10px;
     overflow:hidden;
     outline:0;
     border: none;
+    text-overflow:ellipsis;
+   
 
     }
-    @media screen and (max-width:600px){
-        overflow: none;
-     
-    }
+   
 
 `
 
 export const ContainerActionsModal=styled.div`
-display:flex;
-justify-content: flex-end;
-margin-top: 35px;
-margin-bottom: 12px;
-
+    display:flex;
+    justify-content: flex-end;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    width: 100%;
 a{
-    width: 90px;
+  
     display: flex;
     text-decoration:none;
     background-color:#dcdde6;
@@ -86,6 +82,7 @@ a{
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    text-overflow:hidden;
      &:hover{
         background-color:#33cc52;
          cursor: pointer;
@@ -94,5 +91,13 @@ a{
     height:22px;
     width: 22px;
    }
+  
 }
+@media screen and (max-width:600px){
+        justify-content:center;
+        a{
+            margin: 5px 0;
+            margin: 0 5px;
+        }
+    }
 `

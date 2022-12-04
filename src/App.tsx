@@ -5,7 +5,7 @@ import { AuthPrivate } from './Components/AuthRoute'
 import { AllNotes } from './Pages/AllNotes/AllNotes'
 import { LoginPage } from './Pages/Login/login'
 import { Register } from './Pages/Register'
-import { AuthProvider } from './Contexts/Auth/AuthProvider'
+
 
 const App=()=>{ 
  

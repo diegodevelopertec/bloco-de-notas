@@ -7,7 +7,6 @@ import passwordIcon from '../../assets/images/password.svg'
 import { UserApi } from '../../Api/users'
 import { Navigate } from 'react-router-dom'
 import { useContext } from 'react'
-import { ContextAuth } from '../../Contexts/Auth/AuthContext'
 import NoteImage from './../../assets/images/noteApp.png'
 
 

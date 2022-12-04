@@ -22,10 +22,6 @@ export const UserApi={
       
         return true
 
-
-
-
-
     },
     registro:async (name:string,email:string,password:string):Promise<boolean>=>{
             try{
