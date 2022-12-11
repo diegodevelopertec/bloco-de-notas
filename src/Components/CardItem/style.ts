@@ -57,7 +57,7 @@ export const cardData=styled.div<Props>`
         input{
             transition: all ease 0.3s;
             width: 100%;
-            background-color:  ${props=>props.stateInputs ? '#16104a' : '#eeee'};
+            background-color: ${ props=>props.stateInputs ? '#16104a'  : '#eeee'};
             padding: 10px ;
             border: none;
             border-radius: 5px;
@@ -70,6 +70,7 @@ export const cardContent=styled.div<Props>`
     flex:1;
     margin-top:10px;
 
+ 
     textarea{
         width:100%;
         height: 250px;
@@ -77,8 +78,7 @@ export const cardContent=styled.div<Props>`
         border-radius: 6px;
         background-color: ${props=>props.stateInputs ? '#16104a' : '#eeee'};
         padding:10px;
-        overflow:none;
-        text-overflow: ellipsis;
+        overflow: auto;
         transition: all ease 0.3s;
    
     @media screen and (max-width:600px){

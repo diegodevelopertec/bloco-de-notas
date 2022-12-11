@@ -77,7 +77,8 @@ const saveNote=async()=>{
            </div>
         </S.cardData>
         <S.cardContent stateInputs={inputDisable}>
-            <textarea  
+         
+        <textarea  
                disabled={inputDisable} 
                value={stateContent}
                onChange={(e:ChangeEvent<HTMLTextAreaElement>)=>setStateContent(e.target.value)}
@@ -86,6 +87,7 @@ const saveNote=async()=>{
               {data.content}
             
             </textarea>
+           
         </S.cardContent>
         <S.ContainerActionsModal >
             {inputDisable && <button className="link-view" onClick={EditNote}  ><img  src={EditImage} alt="" />Editar</button> || 
