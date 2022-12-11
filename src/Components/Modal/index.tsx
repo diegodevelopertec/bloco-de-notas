@@ -21,7 +21,7 @@ export const Modal=({activateOffModal}:Props)=>{
 
     const addNote=async ()=>{
         if(titleInput && contentInput){
-            let json=await ApiActions.addPostNote(titleInput,contentInput,2)
+            let json=await ApiActions.postNote(titleInput,contentInput,2)
             activateOffModal()
           navigate('/notes')
         }else{

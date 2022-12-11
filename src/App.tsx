@@ -9,8 +9,7 @@ import { Register } from './Pages/Register'
 
 const App=()=>{ 
  
-  
-  const [cardModal,setCardModal]=useState(false)
+
 
 
 return <>

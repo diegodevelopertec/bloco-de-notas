@@ -18,21 +18,22 @@ export const Main=styled.main`
 `
 type Prop={
     opacityCondition:boolean,
-   listLength:number
+   listLength:number,
+   errorState:boolean
 }
 export const ListContainer=styled.div<Prop>`
-display: flex;
-margin-top:100px;
-flex-wrap: wrap;
-overflow: hidden;
-justify-content: center;
-width: 95vw;
-opacity:${props=>props.opacityCondition ? '0.5' : '1'};
-justify-content: ${props=>(props.listLength >= 1) && (props.listLength > 0)  ?  'flex-start' : null};
-padding: 0 5%;
-flex-wrap:wrap;
-display: grid;
-grid-template-columns:repeat(4,1fr);
+    display: flex;
+    margin-top:100px;
+    flex-wrap: wrap;
+    overflow: hidden;
+    justify-content: center;
+    width: 95vw;
+    opacity:${props=>props.opacityCondition ? '0.5' : '1'};
+    justify-content: ${props=>(props.listLength >= 1) && (props.listLength > 0)  ?  'flex-start' : null};
+    padding: 0 5%;
+    flex-wrap:wrap;
+    display: ${props=>props.errorState === true ? 'flex' : 'grid'};
+    grid-template-columns:repeat(4,1fr);
 
 @media screen and (max-width:700px){
     margin-top:20px;

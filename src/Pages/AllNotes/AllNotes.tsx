@@ -70,7 +70,7 @@ return <>
     <S.Main id='list-container'>
    
       
-          <S.ListContainer listLength={notes.length} opacityCondition={opacity} className="list-card-container">
+          <S.ListContainer errorState={notes.length === 0 ? true : false} listLength={notes.length} opacityCondition={opacity} className="list-card-container">
             
             {notes.length !== 0 ?  
               notes.map((item,index)=>(

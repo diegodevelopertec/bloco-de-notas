@@ -8,7 +8,7 @@ export const ApiActions={
             let response=await axios.get(`${BASEURL}notes`)
             return response.data
         },
-        addPostNote:async(title:string,content:string,usersId:number)=>{
+        postNote:async(title:string,content:string,usersId:number)=>{
                     let response=await axios.post(`${BASEURL}notes`,{usersId,title,content})
                     return response.data
                    

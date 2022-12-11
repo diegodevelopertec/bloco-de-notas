@@ -17,24 +17,28 @@ export const Card=({info,clickDelete,onClick}:Props)=>{
    
 const clickReturnData=()=>onClick(info)
      
-    
+    let  textCard=info.content.substring(0,200)
+  
+
 
     return <>
-    <S.cardContainer  className="cardItem">
-      
-        <S.cardData>
-            <span><h3 id="title-card">{info.title}</h3></span>
-            <span><h3>{info.data}</h3></span>
-        </S.cardData>
-        <S.cardContent>
-            <textarea disabled name="" id="" value={info.content}></textarea>
-        </S.cardContent>
-        <S.ContainerActionsModal>
-            <a className="link-view" onClick={clickReturnData}  ><img  src={ViewImage} alt="" /></a>
-            <a className="link-lixeira"  onClick={clickDelete} ><img src={LixeiraImage} alt="" /></a>
-            
-        </S.ContainerActionsModal>
-    </S.cardContainer>
+        <S.cardContainer  className="cardItem">
+        
+            <S.cardData>
+                <span><h3 id="title-card">{info.title}</h3></span>
+                <span><h3>{info.data}</h3></span>
+            </S.cardData>
+            <S.cardContent>
+                <textarea disabled name="" id="" 
+                value={textCard.length <= 200 ? textCard += '...' : textCard}
+                  ></textarea>
+            </S.cardContent>
+            <S.ContainerActionsModal>
+                <a className="link-view" onClick={clickReturnData}  ><img  src={ViewImage} alt="" /></a>
+                <a className="link-lixeira"  onClick={clickDelete} ><img src={LixeiraImage} alt="" /></a>
+                
+            </S.ContainerActionsModal>
+        </S.cardContainer>
  
 
 

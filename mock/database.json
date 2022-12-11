@@ -27,13 +27,18 @@
     },
     {
       "title": "Angular Js",
-      "content": "HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.",
+      "content": "HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.HTML is great for declaring static documents, but it falters when we try to use it for declaring dynamic views in web-applications. AngularJS lets you extend HTML vocabulary for your application. The resulting environment is extraordinarily expressive, readable, and quick to develop.",
       "id": 2
     },
     {
       "title": "Vue Js",
-      "content": "Vue (pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS, and JavaScript and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be they simple or complex.",
+      "content": "Vue x(pronounced /vjuː/, like view) is a JavaScript framework for building user interfaces. It builds on top of standard HTML, CSS, and JavaScript and provides a declarative and component-based programming model that helps you efficiently develop user interfaces, be they simple or complex.",
       "id": 3
+    },
+    {
+      "title": "c#",
+      "content": "C# é uma linguagem de programação criada pela Microsoft como parte da plataforma .NET. Por ter uma sintaxe parecida com o Java e C++, o C# pode ser indicado mesmo para programadores iniciantes, que já conhecem a programação Orientada a Objetos. Com ela podemos criar desde aplicações web, desktop, mobile e também jogos eletrônicos.",
+      "id": 5
     }
   ]
 }
