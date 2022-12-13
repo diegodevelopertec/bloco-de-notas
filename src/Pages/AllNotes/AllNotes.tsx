@@ -7,7 +7,7 @@ import { CardItem } from "../../Components/CardItem"
 import errorImageIcons from '../../assets/images/error.png'
 import { NotesTypes } from "../../types/notesType"
 import {ApiActions} from '../../Api/notes'
-import Loading from "../../Components/Loading"
+import { Loading } from "../../Components/Loading"
 
 export const AllNotes=()=>{
   //STATES
@@ -17,13 +17,15 @@ export const AllNotes=()=>{
   const [activeModalContainer,setActiveModalContainer]=useState(false)
   const [dataModalEdit,setDataModalEdit]=useState<NotesTypes | any>()
   const [visibleModalEdit,setVisibleModalEdit]=useState(false)
+  const [isLoading,setIsLoading]=useState(true)
   
 
   //EFFECTS
   const   loadNotes=async()=>{
     let json=await ApiActions.getAllNotes()
+    setIsLoading(false)
      setNotes(json)
-     
+  
     }
 
   useEffect(()=>{
@@ -71,8 +73,8 @@ return <>
    
       
           <S.ListContainer errorState={notes.length === 0 ? true : false} listLength={notes.length} opacityCondition={opacity} className="list-card-container">
-            
-            {notes.length !== 0 ?  
+            {isLoading  ? <Loading typeLoad='spinningBubbles' color='#2b79c2' text='carregando suas anotações' />  :
+            notes.length  !== 0 ?  
               notes.map((item,index)=>(
               
                   <div key={index}  >
