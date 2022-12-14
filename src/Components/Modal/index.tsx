@@ -1,9 +1,9 @@
 import { ChangeEvent, useState } from 'react'
 import S from './style.module.css'
-import {ApiActions} from '../../Api/notes'
+import {ApiActions} from '../../Services/notes'
 import {useNavigate} from 'react-router-dom'
 import { Link } from 'react-router-dom'
-
+import {  toast } from 'react-toastify';
 
 type Props={activateOffModal:()=>void}
 
@@ -23,9 +23,10 @@ export const Modal=({activateOffModal}:Props)=>{
         if(titleInput && contentInput){
             let json=await ApiActions.postNote(titleInput,contentInput,2)
             activateOffModal()
-          navigate('/notes')
+            navigate('/notes')
+            toast.success('Anotação criada com sucesso')
         }else{
-            alert('Todos os campos devem ser preenchidos')
+          toast.error('Todos os campos devem ser preenchidos')
         }
         
     }

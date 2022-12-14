@@ -5,18 +5,6 @@
       "name": "André",
       "email": "andre@gmail.com",
       "password": "teste123"
-    },
-    {
-      "email": "andrevdev@gamil.com",
-      "password": "$2a$10$/BAouWDy0FSdjuxI0EEd2.fHf.F/Ys4hl71U5DcPLlmbtv8wuByrO",
-      "name": "andre",
-      "id": 2
-    },
-    {
-      "email": "jonasdev@gmail.com",
-      "password": "$2a$10$U4UzHUyvRt2nYGqfL5q0AOv.kB1VsV4qdLH5Wbsbe3q5OdgBuiCMS",
-      "name": "jonas",
-      "id": 3
     }
   ],
   "notes": []

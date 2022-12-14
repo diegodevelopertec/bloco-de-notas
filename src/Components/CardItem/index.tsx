@@ -3,8 +3,9 @@ import LixeiraImage from '../../assets/images/lixeira.png'
 import EditImage from '../../assets/images/edit.png'
 import { NotesTypes } from '../../types/notesType'
 import {ChangeEvent, useEffect, useState } from 'react'
-import {ApiActions} from '../../Api/notes'
+import {ApiActions} from '../../Services/notes'
 import {Navigate, useNavigate} from 'react-router-dom'
+import {  toast } from 'react-toastify';
 
 type Props={
     data:NotesTypes
@@ -32,6 +33,7 @@ export const CardItem=({data,closeCardItem}:Props)=>{
             }
        }
        request()
+       toast.success('Anotação deletada')
        closeCardItem()
        
 }
@@ -39,6 +41,7 @@ export const CardItem=({data,closeCardItem}:Props)=>{
 const saveNote=async()=>{
   setInputDisable(false)
   let res=await ApiActions.updateNote(stateTitle,stateContent,data.id.toString())
+  toast.success('Anotação atualizada')
   setInputDisable(true)
   if(stateTitle !== data.title || stateContent !== data.content){
       closeCardItem()

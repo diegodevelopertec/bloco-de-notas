@@ -3,7 +3,6 @@ import  * as S from './styled'
 import { Link, useNavigate } from 'react-router-dom'
 import emailIcon from '../../assets/images/email.svg'
 import passwordIcon from '../../assets/images/password.svg'
-import { UserApi } from '../../Api/users'
 import { useContext } from 'react'
 import NoteImage from './../../assets/images/noteApp.png'
 

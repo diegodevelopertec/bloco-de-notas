@@ -5,7 +5,8 @@ import { AuthPrivate } from './Components/AuthRoute'
 import { AllNotes } from './Pages/AllNotes/AllNotes'
 import { LoginPage } from './Pages/Login/login'
 import { Register } from './Pages/Register'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 const App=()=>{ 
  
@@ -28,6 +29,7 @@ return <>
   </S.Container>
  
   </Router>
+  <ToastContainer />
  
  </>
 

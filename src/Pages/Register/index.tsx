@@ -4,7 +4,6 @@ import { ChangeEvent,useEffect,useState} from 'react'
 import userIcon from '../../assets/images/user.svg'
 import emailIcon from '../../assets/images/email.svg'
 import passwordIcon from '../../assets/images/password.svg'
-import { UserApi } from '../../Api/users'
 import { Navigate } from 'react-router-dom'
 import { useContext } from 'react'
 import NoteImage from './../../assets/images/noteApp.png'
@@ -19,9 +18,11 @@ export const Register=()=>{
 
 const registerUser=async()=>{
   if(name && email && password){
-    let request=await UserApi.registro(name,email,password)
-    let response=await request
-    return response
+  
+
+
+
+    
   }else{
     alert('Preencha todos os campos')
   }

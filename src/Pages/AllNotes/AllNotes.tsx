@@ -6,8 +6,10 @@ import * as S from './styled'
 import { CardItem } from "../../Components/CardItem"
 import errorImageIcons from '../../assets/images/error.png'
 import { NotesTypes } from "../../types/notesType"
-import {ApiActions} from '../../Api/notes'
+import {ApiActions} from '../../Services/notes'
 import { Loading } from "../../Components/Loading"
+import { toast } from 'react-toastify';
+
 
 export const AllNotes=()=>{
   //STATES
@@ -39,6 +41,7 @@ export const AllNotes=()=>{
   const deleteNote=async (id:number )=>{
       try{
          let json=await ApiActions.delNote(id)
+         toast.success('Anotação deletada')
           return json
       }catch(e){
         console.log(e);

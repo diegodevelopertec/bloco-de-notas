@@ -15,9 +15,8 @@ type Props ={
 export const Card=({info,clickDelete,onClick}:Props)=>{
    
    
-const clickReturnData=()=>onClick(info)
-     
-    let  textCard=info.content.substring(0,200)
+     const clickReturnData=()=>onClick(info)
+     let  textCard=info.content.substring(0,200)
   
 
 
