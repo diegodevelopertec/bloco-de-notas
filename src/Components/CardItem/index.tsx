@@ -41,16 +41,17 @@ export const CardItem=({data,closeCardItem}:Props)=>{
 const saveNote=async()=>{
   setInputDisable(false)
   let res=await ApiActions.updateNote(stateTitle,stateContent,data.id.toString())
-  toast.success('Anotação atualizada')
-  setInputDisable(true)
-  if(stateTitle !== data.title || stateContent !== data.content){
+  if(stateContent !== data.content || stateTitle !== data.title){
+      toast.success('Anotação atualizada')
       closeCardItem()
   }
+  setInputDisable(true)
+  
+ 
 }
 
     useEffect(()=>{
       deleteNote
-     
     },[])
 
   const EditNote=()=>setInputDisable(false)

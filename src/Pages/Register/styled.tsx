@@ -5,7 +5,7 @@ export const RegisterContainer=styled.div`
     overflow:auto;
     display: flex;
     justify-content: center;
-   padding-top: 100px;
+    padding-top: 100px;
 
 @media screen and (max-width:912px) {
     flex-direction: column;
@@ -53,7 +53,7 @@ export const FormRegister=styled.div`
     }
     input{
      font-size:18px;
-     padding: 12px;
+     padding: 18px;
      border: none;
      width: 100%;
      border-top-right-radius:6px;

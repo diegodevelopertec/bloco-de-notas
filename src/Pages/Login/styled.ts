@@ -92,7 +92,7 @@ h3{
        font-size:18px;
        border-top-right-radius:6px;
        border-bottom-right-radius:6px;
-       padding: 15px;
+       padding: 18px;
        width: 100%;
        border: none;
        background-color: #222124;

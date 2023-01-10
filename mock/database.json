@@ -1,11 +1,15 @@
 {
-  "users": [
+  "user": {
+    "id": 1,
+    "name": "André",
+    "email": "andre@gmail.com",
+    "password": "teste123"
+  },
+  "notes": [
     {
-      "id": 1,
-      "name": "André",
-      "email": "andre@gmail.com",
-      "password": "teste123"
+      "title": "hello wolrd",
+      "content": "hello wolrlddeeerr",
+      "id": 1
     }
-  ],
-  "notes": []
+  ]
 }

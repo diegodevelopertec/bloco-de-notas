@@ -5,47 +5,56 @@ import emailIcon from '../../assets/images/email.svg'
 import passwordIcon from '../../assets/images/password.svg'
 import { useContext } from 'react'
 import NoteImage from './../../assets/images/noteApp.png'
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 
-
+type Inputs = {
+    email: string,
+    password: string,
+  };
 
 export const LoginPage=()=>{
 
-    const [emailInput,setEmailInput]=useState('')
-    const [passwordInput,setPasswordInput]=useState('')
+    const schema = yup.object({
+        email: yup.string().email().required(),
+        password: yup.number().positive().integer().required(),
+      }).required();
 
-
-
-    const userLogin=async()=>{
-        
-    }
-
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
+        resolver:yupResolver(schema)
+    });
+    const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+  
+   
+      
+ 
 
     return <>
         <S.Login>
         
-        <S.ContainerForm>
+        <S.ContainerForm onSubmit={handleSubmit(onSubmit)}>
             <h3>Login</h3>
             <form action="">
-                <div className='cx-form'>
-                    <span><img src={emailIcon} alt="" /></span>
-                    <input type="email"  
-                       value={emailInput}  
-                       onChange={(e:ChangeEvent<HTMLInputElement>)=>setEmailInput(e.target.value)}
-                       placeholder='Digite seu email'
-                    />
+                <div >
+                    <div className='cx-form'>
+                      <span><img src={emailIcon} alt="" /></span>
+                        <input  {...register("email")}  placeholder='Digite seu email' />
+                        <p>{errors.email?.message}</p>
+                   </div>
+                   
+                 
                 </div>
 
-                <div className='cx-form'>
+                <div>
+                   <div className='cx-form'>
                     <span><img src={passwordIcon} alt="" /></span>
-                    <input type="password" 
-                       value={passwordInput}  
-                       onChange={(e:ChangeEvent<HTMLInputElement>)=>setPasswordInput(e.target.value)} 
-                       placeholder='Digite sua senha'
-                    />
+                        <input  {...register("password")}  placeholder='Digite sua senha' />
+                   </div>
                 </div>
 
                 <div className="cx-button">
-                     <Link  to='/notes' onClick={userLogin} className='link'>Entrar</Link>
+                     <Link  to='/notes'  className='link'>Entrar</Link>
                 </div>
                 <div className="link-register">
                   <p>Nao tem registro ? <Link to='/register'>clique aqui</Link></p>

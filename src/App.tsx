@@ -7,6 +7,7 @@ import { LoginPage } from './Pages/Login/login'
 import { Register } from './Pages/Register'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
+import './../src/helpers/yupMessage'
 
 const App=()=>{ 
  
