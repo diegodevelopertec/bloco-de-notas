@@ -8,8 +8,10 @@ import NoteImage from './../../assets/images/noteApp.png'
 import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import './../../helpers/yupMessage'
 
 type Inputs = {
+    name:string,
     email: string,
     password: string,
   };
@@ -18,7 +20,7 @@ export const LoginPage=()=>{
 
     const schema = yup.object({
         email: yup.string().email().required(),
-        password: yup.number().positive().integer().required(),
+        password: yup.string().required(),
       }).required();
 
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
@@ -38,23 +40,22 @@ export const LoginPage=()=>{
             <form action="">
                 <div >
                     <div className='cx-form'>
-                      <span><img src={emailIcon} alt="" /></span>
-                        <input  {...register("email")}  placeholder='Digite seu email' />
-                        <p>{errors.email?.message}</p>
+                          <span><img src={emailIcon} alt="" /></span>
+                          <input  {...register("email")}  placeholder='Digite seu email' />
                    </div>
-                   
-                 
+                   <p className='error-msg-form'>{errors.email?.message}</p>
                 </div>
 
                 <div>
                    <div className='cx-form'>
-                    <span><img src={passwordIcon} alt="" /></span>
+                        <span><img src={passwordIcon} alt="" /></span>
                         <input  {...register("password")}  placeholder='Digite sua senha' />
                    </div>
+                   <p className='error-msg-form'>{errors.password?.message}</p>
                 </div>
 
                 <div className="cx-button">
-                     <Link  to='/notes'  className='link'>Entrar</Link>
+                     <input type={'submit'} className='link' />
                 </div>
                 <div className="link-register">
                   <p>Nao tem registro ? <Link to='/register'>clique aqui</Link></p>

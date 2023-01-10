@@ -14,7 +14,7 @@ export const RegisterContainer=styled.div`
 `
 
 
-export const FormRegister=styled.div`
+export const FormRegister=styled.form`
     width: 600px;
     height: max-content;
     background-color: #0e082b;
@@ -23,7 +23,10 @@ export const FormRegister=styled.div`
     display: flex;
     flex-direction: column;
     box-shadow: 0 0 10px  #421ab0;
-
+    .error-msg-form{
+        color: #d94c66;
+        font-size:13px;
+    }
 
     h3{
         margin-top: 15px;
@@ -72,7 +75,9 @@ export const FormRegister=styled.div`
     justify-content: center;
     align-items: center;
     margin-top: 26px;
-    a{
+   
+   
+   input[type='submit']{
         background-color:#139c4e ;
         display: flex;
         justify-content: center;

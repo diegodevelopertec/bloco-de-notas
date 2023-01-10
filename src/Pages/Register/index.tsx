@@ -7,57 +7,69 @@ import passwordIcon from '../../assets/images/password.svg'
 import { Navigate } from 'react-router-dom'
 import { useContext } from 'react'
 import NoteImage from './../../assets/images/noteApp.png'
+import { useForm, SubmitHandler } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+import './../../helpers/yupMessage'
 
 
+type Inputs={
+    email: string,
+    password: string,
+    name:string
+}
 export const Register=()=>{
     
-    const [name,setNameRegister]=useState('')
-    const [email,setEmailRegister]=useState('')
-    const [password,setPasswordRegister]=useState('')
-    
 
-const registerUser=async()=>{
-  if(name && email && password){
-  
+    const schema = yup.object({
+        email: yup.string().email().required(),
+        name:yup.string().required(),
+        password: yup.string().required(),
+      }).required();
 
+    const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
+        resolver:yupResolver(schema)
+    });
+    const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
 
-
-    
-  }else{
-    alert('Preencha todos os campos')
-  }
-     
-}
 
 
 
     return <>
     <S.RegisterContainer>
-        <S.FormRegister>
+        <S.FormRegister onSubmit={handleSubmit(onSubmit)}>
         <h3>Cadastro</h3>
-            <div className="cx-form-register">
+            <div className='error-msg-form' >
+               <div className="cx-form-register">
                 <span><img src={userIcon} alt="" /></span>
-                <input type="text" 
-                    value={name} 
-                    placeholder='Digite seu nome' 
-                    onChange={(e:ChangeEvent<HTMLInputElement>)=>setNameRegister(e.target.value)}/>
+                    <input type="text" 
+                            {...register('name')}
+                            placeholder='Digite seu nome'
+                      />
+               </div>
+               <p>{errors.name?.message}</p>
             </div>
-            <div className="cx-form-register">
-                <span><img src={emailIcon} alt="" /></span>
-                <input type="email" 
-                   value={email} 
-                   onChange={(e:ChangeEvent<HTMLInputElement>)=>setEmailRegister(e.target.value)} 
-                   placeholder='Digite seu email'/>
+            <div className='error-msg-form' >
+               <div className="cx-form-register">
+                    <span><img src={emailIcon} alt="" /></span>
+                        <input type="email" 
+                            {...register('email')}
+                            placeholder='Digite seu email'
+                        />
+               </div>
+               <p>{errors.email?.message}</p>
             </div>
-            <div className="cx-form-register">
-               <span><img src={passwordIcon} alt="" /></span>
-                <input type="password" 
-                   value={password} 
-                   onChange={(e:ChangeEvent<HTMLInputElement>)=>setPasswordRegister(e.target.value)} 
-                   placeholder='Digite uma senha'/>
-             </div>
+            <div className='error-msg-form' >
+               <div className="cx-form-register">
+                    <span><img src={passwordIcon} alt="" /></span>
+                        <input type="password" 
+                            {...register('password')}
+                          placeholder='Digite uma senha'/>
+               </div>
+               <p>{errors.password?.message}</p>
+            </div>
              <div className="cx-register-btn">
-                <a onClick={registerUser}>inscrever-se</a>
+                <input type={'submit'}   value='inscrever-se'  />
              </div>
 
 

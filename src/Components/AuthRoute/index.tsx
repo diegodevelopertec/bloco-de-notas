@@ -6,12 +6,15 @@ type Props={
    children:JSX.Element
 }
 export const AuthPrivate=({children}:Props)=>{
-
-  
-  if(!true){
-    return  <Navigate to='/'/>
+   let user={
+      password:'',
+      email:''
    }
 
-   return children
 
+   if(user.email !== ''){
+      return children
+   }
+
+   return <Navigate  to='/' />
 }

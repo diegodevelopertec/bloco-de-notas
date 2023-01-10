@@ -7,32 +7,29 @@ import { LoginPage } from './Pages/Login/login'
 import { Register } from './Pages/Register'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.min.css';
-import './../src/helpers/yupMessage'
+
 
 const App=()=>{ 
  
-
-
-
-return <>
-  
-  <Router>
-  <S.Container>
-    <S.Header>WordBlock </S.Header>
-      <S.ContainerContent>
-        <Routes>
-           <Route path='/register' element={<Register/>} />
-           <Route path='/' element={<LoginPage />} />
-           <Route path='/notes' element={<AuthPrivate><AllNotes/></AuthPrivate>} />
-        </Routes>
-    </S.ContainerContent>
+  return <>
     
-  </S.Container>
- 
-  </Router>
-  <ToastContainer />
- 
- </>
+    <Router>
+    <S.Container>
+      <S.Header>WordBlock </S.Header>
+        <S.ContainerContent>
+          <Routes>
+            <Route path='/register' element={<Register/>} />
+            <Route path='/' element={<LoginPage />} />
+            <Route path='/notes' element={<AuthPrivate><AllNotes/></AuthPrivate>} />
+          </Routes>
+      </S.ContainerContent>
+      
+    </S.Container>
+  
+    </Router>
+    <ToastContainer />
+  
+  </>
 
 
 

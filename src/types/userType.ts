@@ -1,7 +1,7 @@
 export type UserTypes={
-    id?:number,
+     id?:number,
     name?:string,
     email:string,
     password:string
-   accessToken?:string
+
 }

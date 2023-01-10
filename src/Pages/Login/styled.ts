@@ -63,14 +63,19 @@ h3{
     margin-bottom: 26px;
 }
 
+.error-msg-form{
+        color: #d94c66;
+        font-size:13px;
+    }
+
 .cx-form{
  
     margin-top: 12px;
     display: flex;
     justify-content: flex-end;
     width: 100%;
-
-
+   
+   
     span{
         width:70px;
         display:flex;
