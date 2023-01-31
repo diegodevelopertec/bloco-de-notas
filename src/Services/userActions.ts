@@ -5,15 +5,15 @@ import { Api } from "./ApiConfig";
 export const ApiUserActions={
 
 
-    registerUser: async (email:string,password:string)=>{
-      let response=await Api.post('notes',{email,password})
-       return response.data
+    createUser: async (email:string,password:string)=>{
+      let response=await Api.post('user',{email,password})
+       return response
 
 
     },
     LoginUser:async (email:string,password:string)=>{
-        let response=await Api.post('login',{email,password})
-        return response.data
+        let response=await Api.get('user')
+        return response
  
 
     },

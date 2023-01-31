@@ -18,9 +18,10 @@ const App=()=>{
       <S.Header>WordBlock </S.Header>
         <S.ContainerContent>
           <Routes>
+             <Route path='/' element={<AuthPrivate><AllNotes /></AuthPrivate>} />
             <Route path='/register' element={<Register/>} />
-            <Route path='/' element={<LoginPage />} />
-            <Route path='/notes' element={<AuthPrivate><AllNotes/></AuthPrivate>} />
+            <Route path='/login' element={<LoginPage />} />
+           
           </Routes>
       </S.ContainerContent>
       

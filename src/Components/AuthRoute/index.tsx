@@ -1,20 +1,22 @@
 import { ReactNode } from "react"
-import {Navigate} from 'react-router-dom'
-import {useContext} from 'react'
+import {Navigate, useNavigate} from 'react-router-dom'
+import { useAuth } from "../../hooks/useAuth"
 
 type Props={
    children:JSX.Element
 }
+
 export const AuthPrivate=({children}:Props)=>{
-   let user={
-      password:'',
-      email:''
-   }
+      let redirect=useNavigate()
+      let {user}=useAuth()
+ 
+      if(!user){
+        redirect('/login')
+      }
+  
 
-
-   if(user.email !== ''){
       return children
-   }
 
-   return <Navigate  to='/' />
+
+
 }

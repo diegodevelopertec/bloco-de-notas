@@ -23,7 +23,7 @@ export const Modal=({activateOffModal}:Props)=>{
         if(titleInput && contentInput){
             let json=await ApiActions.postNote(titleInput,contentInput,2)
             activateOffModal()
-            navigate('/notes')
+            navigate('/')
             toast.success('Anotação criada com sucesso')
         }else{
           toast.error('Todos os campos devem ser preenchidos')
@@ -50,7 +50,7 @@ return <>
                 </div>
                 <div className={S.dataContent}>
                     <span>Anotação</span>
-                    <textarea name="" id="" 
+                    <textarea className="textarea" id="" 
                         placeholder='Digite algo...' 
                         value={contentInput} 
                         onChange={(e:ChangeEvent<HTMLTextAreaElement>)=>setNoteContentInput(e.target.value)} >

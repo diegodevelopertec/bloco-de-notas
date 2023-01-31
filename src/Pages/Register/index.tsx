@@ -1,5 +1,5 @@
 import * as S from './styled'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { ChangeEvent,useEffect,useState} from 'react'
 import userIcon from '../../assets/images/user.svg'
 import emailIcon from '../../assets/images/email.svg'
@@ -11,26 +11,39 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import './../../helpers/yupMessage'
-
+import { useAuth } from '../../hooks/useAuth'
+import { toast } from 'react-toastify'
 
 type Inputs={
     email: string,
     password: string,
-    name:string
+  
 }
 export const Register=()=>{
-    
+    const {Register}=useAuth()
+    const Redirect=useNavigate()
+
+
 
     const schema = yup.object({
         email: yup.string().email().required(),
-        name:yup.string().required(),
         password: yup.string().required(),
       }).required();
 
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
         resolver:yupResolver(schema)
     });
-    const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+
+    const onSubmit: SubmitHandler<Inputs> = async ( data )=> { 
+
+        let dataRes=await Register(data.email,data.password)
+       if(dataRes){
+            Redirect('/login')
+       }else{
+        toast.error('algo deu errado')
+       }
+       
+    }
 
 
 
@@ -39,16 +52,8 @@ export const Register=()=>{
     <S.RegisterContainer>
         <S.FormRegister onSubmit={handleSubmit(onSubmit)}>
         <h3>Cadastro</h3>
-            <div className='error-msg-form' >
-               <div className="cx-form-register">
-                <span><img src={userIcon} alt="" /></span>
-                    <input type="text" 
-                            {...register('name')}
-                            placeholder='Digite seu nome'
-                      />
-               </div>
-               <p>{errors.name?.message}</p>
-            </div>
+            
+              
             <div className='error-msg-form' >
                <div className="cx-form-register">
                     <span><img src={emailIcon} alt="" /></span>

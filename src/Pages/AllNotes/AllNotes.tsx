@@ -9,6 +9,8 @@ import { NotesTypes } from "../../types/notesType"
 import {ApiActions} from '../../Services/notes'
 import { Loading } from "../../Components/Loading"
 import { toast } from 'react-toastify';
+import { useAuth } from "../../hooks/useAuth"
+import { useNavigate } from "react-router-dom"
 
 
 export const AllNotes=()=>{
@@ -20,7 +22,8 @@ export const AllNotes=()=>{
   const [dataModalEdit,setDataModalEdit]=useState<NotesTypes | any>()
   const [visibleModalEdit,setVisibleModalEdit]=useState(false)
   const [isLoading,setIsLoading]=useState(true)
-  
+  let {user,logout}=useAuth()
+  const Redirect=useNavigate()
 
   //EFFECTS
   const   loadNotes=async()=>{
@@ -50,6 +53,8 @@ export const AllNotes=()=>{
   }
 
 
+  
+
   const actionsModal={
           openModal:()=>{setActiveModalContainer(true,),setOnModal(true) , setOpacity(true) },
           closeModal:()=>{setActiveModalContainer(false), setOnModal(false) , setOpacity(false)}
@@ -71,10 +76,17 @@ export const AllNotes=()=>{
    
   }
 
+
+  const LogoutUser=()=>{
+     logout()
+     Redirect('')
+  }
 return <>
     <S.Main id='list-container'>
    
-      
+     <div>
+     {user && <button onClick={LogoutUser} >sair</button>}
+     </div>
           <S.ListContainer errorState={notes.length === 0 ? true : false} listLength={notes.length} opacityCondition={opacity} className="list-card-container">
             {isLoading  ? <Loading typeLoad='spinningBubbles' color='#2b79c2' text='carregando suas anotações' />  :
             notes.length  !== 0 ?  

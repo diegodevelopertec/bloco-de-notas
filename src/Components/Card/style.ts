@@ -9,10 +9,10 @@ export const cardContainer=styled.div`
     flex-direction:column;
     margin: 5px;
     border-radius:5px;
-    color:#4bb3b1;
+    color:#cccdcf;
     transition: all ease .4s;
     &:hover{
-      background:#222166;
+        background-color:#221557;
       color:white;
       textarea{
         color: white;

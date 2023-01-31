@@ -16,7 +16,7 @@ export const Card=({info,clickDelete,onClick}:Props)=>{
    
    
      const clickReturnData=()=>onClick(info)
-     let  textCard=info.content.substring(0,200)
+    let textCard=info.content.length
   
 
 
@@ -28,9 +28,10 @@ export const Card=({info,clickDelete,onClick}:Props)=>{
                 <span><h3>{info.data}</h3></span>
             </S.cardData>
             <S.cardContent>
-                <textarea disabled name="" id="" 
-                value={textCard.length <= 200 ? textCard += '...' : textCard}
+            <textarea disabled name="" id="" 
+                value={textCard >=200 ? info.content.substring(0,200) + '...' : info.content}
                   ></textarea>
+
             </S.cardContent>
             <S.ContainerActionsModal>
                 <a className="link-view" onClick={clickReturnData}  ><img  src={ViewImage} alt="" /></a>

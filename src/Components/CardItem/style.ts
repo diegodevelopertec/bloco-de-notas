@@ -15,14 +15,15 @@ export const cardContainer=styled.div`
     border-radius:5px;
     color:#4bb3b1;
     transition: all ease 0.4s;
-    box-shadow: 0 0 15px #eee;
+    box-shadow: 0 0 15px #3b3d45;
   
     
     :hover{
       color:white;
     }
     @media screen and (max-width:600px){
-        height: 100%;
+        height: 100vh;
+        width: 100vw;
         margin: 0;
         border-radius: 0;
        padding-bottom: 25px;
@@ -57,7 +58,7 @@ export const cardData=styled.div<Props>`
         input{
             transition: all ease 0.3s;
             width: 100%;
-            background-color: ${ props=>props.stateInputs ? '#16104a'  : '#eeee'};
+            background-color: ${ props=>props.stateInputs ? '#8f98b5'  : '#eeee'};
             padding: 10px ;
             border: none;
             border-radius: 5px;
@@ -76,7 +77,7 @@ export const cardContent=styled.div<Props>`
         height: 250px;
         resize:none;
         border-radius: 6px;
-        background-color: ${props=>props.stateInputs ? '#16104a' : '#eeee'};
+        background-color: ${props=>props.stateInputs ? '#8f98b5' : '#eeee'};
         padding:10px;
         overflow: auto;
         transition: all ease 0.3s;

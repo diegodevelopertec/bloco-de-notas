@@ -9,6 +9,8 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import './../../helpers/yupMessage'
+import { useAuth } from '../../hooks/useAuth'
+import { ToastContainer, toast } from 'react-toastify'
 
 type Inputs = {
     name:string,
@@ -17,6 +19,7 @@ type Inputs = {
   };
 
 export const LoginPage=()=>{
+    const {Login}=useAuth()
 
     const schema = yup.object({
         email: yup.string().email().required(),
@@ -26,7 +29,14 @@ export const LoginPage=()=>{
     const { register, handleSubmit, formState: { errors } } = useForm<Inputs>({
         resolver:yupResolver(schema)
     });
-    const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+    const onSubmit: SubmitHandler<Inputs> = async (data )=> {
+        let response=await Login(data.email,data.password)
+        if(response){
+            return true
+        }else{
+            toast.error('algo deu errado')
+        }
+    }   
   
    
       
@@ -55,7 +65,7 @@ export const LoginPage=()=>{
                 </div>
 
                 <div className="cx-button">
-                     <input type={'submit'} className='link' />
+                     <input type={'submit'} className='link'  value={'Entrar'}/>
                 </div>
                 <div className="link-register">
                   <p>Nao tem registro ? <Link to='/register'>clique aqui</Link></p>

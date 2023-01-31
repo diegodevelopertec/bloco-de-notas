@@ -7,7 +7,7 @@ export const Container=styled.div`
     background:white;
     height: 100%;
     overflow-x: hidden;
-    background-color: #3a3a63;
+    background-color:#533357;
 
   `
 
@@ -27,7 +27,7 @@ export const ContainerContent=styled.div`
     flex-direction: column;
     justify-content:center;
     flex-direction: column;
-    background-color: #3a3a63;
+    background-color:#5d4187;
     min-height: 100%;
     @media screen and (max-width:600px){
         align-items:center;

@@ -9,7 +9,7 @@
     background-color: #0e082b;
     border-radius: 10px;
     transition: all ease .4s;
-    box-shadow: 0 0 13px rgb(130, 144, 209);
+    box-shadow: 0 0 13px #332f2f;
  
    
 }
@@ -66,6 +66,7 @@
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
    
+  
 
 }
 
@@ -120,6 +121,21 @@ top: 1%;
 }
 @media screen and (max-width:700px) {
   .modalContainer{
-   margin: 0 15px;
+   margin: 0 ;
+   border-radius: 0;
+   width: 100vw;
+   left:0;
+   top:0;
+   right:0;
+   bottom: 0;
+   position:absolute;
+   z-index: 2;
   }
+
+  
+.dataContent textarea{
+    height: 70vh;
+}
+ 
+
 }
